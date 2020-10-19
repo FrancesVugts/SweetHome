@@ -1,0 +1,67 @@
+html {
+    height: 100%;
+}
+
+body {
+    background: url('/media/homepage.jpg') no-repeat center center fixed;
+    background-size: cover;
+    height: calc(100vh - 164px);
+    color: #7E3A57;
+    font-family: 'Poiret One';
+}
+
+.logo-font-one {
+    display: inline;
+    font-family: 'Poiret One';
+    color: #7E3A57;
+}
+
+.logo-font-two {
+    display: inline;
+    font-family: 'Poiret One';
+    color: #069D93;
+}
+
+.main-logo-link {
+    width: fit-content;
+}
+
+.search-now-button {
+    background: #069D93;
+    color: #FFFFFF;
+    min-width: 260px;
+}
+
+.search-now-button:hover {
+    background: #000501;
+    color: #FFFFFF;
+    min-width: 260px;
+}
+
+.text-black {
+    color: #000501 !important;
+}
+
+/* -------------------------------- Media Queries */
+
+/* Slightly larger container on xl screens */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 80%;
+  }
+}
+
+/* fixed top navbar only on medium and up */
+@media (min-width: 992px) {
+    .fixed-top-desktop-only {
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        z-index: 1030;
+    }
+
+    .header-container {
+        padding-top: 164px;
+    }
+}
