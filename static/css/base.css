@@ -9,9 +9,6 @@ html {
 body {
     background: url('/media/homepage.jpg') no-repeat center center fixed;
     background-size: cover;
-    height: calc(100vh - 4.5rem);
-    color: #7E3A57;
-    font-family: 'Poiret One';
     display: flex;
     flex-direction: column;
     min-height: 100%;
@@ -84,6 +81,7 @@ header {
     color: #000501;
     text-align: center;
     font-family: 'Open Sans';
+    font-weight: 100;
 }
 
 .nav-link:hover {
@@ -99,7 +97,7 @@ header {
     }
 
     .nav-link:hover {
-        border-bottom: 1px solid #069D93;
+        border-bottom: 2px solid #069D93;
     }
 }
 
@@ -210,28 +208,52 @@ header {
 
 /*--------------------------------------------------Main*/
 
+.search-now-text {
+    font-family: 'Poiret One';
+    font-style: italic;
+    color: #000501;
+    margin: 2rem 0rem;
+}
+
 .search-now-button {
     background: #069D93;
     color: #FFFFFF;
-    min-width: 220px;
+    min-width: 175px;
     font-family: 'Open Sans';
 }
 
 .search-now-button:hover {
-    background: #000501;
+    background: #7E3A57;
     color: #FFFFFF;
-    min-width: 260px;
-    font-family: 'Open Sans';
 }
 
-.text-black {
-    color: #000501 !important;
+@media only screen and (min-width:768px) {
+    .search-now-text {
+        font-size: 3.2rem;
+        margin: 4rem 0rem;
+    }
+
+    .search-now-button {
+        font-size: 1.1rem;
+        min-width: 215px;
+    }
+}
+
+@media only screen and (min-width:992px) {
+    .search-now-text {
+        font-size: 3.5rem;
+    }
+
+    .search-now-button {
+        font-size: 1.2rem;
+        min-width: 225px;
+    }
 }
 
 /* -------------------------------- Media Queries */
 
-/* Slightly larger container on xl screens */
-@media (min-width: 1200px) {
+/* Slightly larger container on sm screens */
+@media (min-width: 768px) {
   .container {
     max-width: 80%;
   }
