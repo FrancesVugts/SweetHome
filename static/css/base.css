@@ -85,8 +85,8 @@ header {
 }
 
 .nav-link:hover {
-    color: #000501;
-    background: #FFFFFF;
+    background: #069D93;
+    color: #FFFFFF;
 }
 
 @media only screen and (min-width: 992px) {
@@ -97,6 +97,8 @@ header {
     }
 
     .nav-link:hover {
+        color: #7E3A57;
+        background: #FFFFFF;
         border-bottom: 2px solid #069D93;
     }
 }
@@ -106,9 +108,22 @@ header {
     color: #FFFFFF;
 }
 
+.active:hover {
+    background: #069D93;
+    color: #FFFFFF;
+}
+
 @media only screen and (min-width: 992px) {
     .active {
-        border-bottom: 1px solid #069D93;
+        background: #FFFFFF;
+        color: #7E3A57;
+        border-bottom: 2px solid #069D93;
+    }
+
+    .active:hover {
+        background: #FFFFFF;
+        color: #7E3A57;
+        border-bottom: 2px solid #069D93;
     }
 }
 
