@@ -37,33 +37,33 @@
     </head>
     <body>
     
-        <header class="container-fluid fixed-top">
-            <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
-                <div class="col-6 my-auto py-1 py-lg-0 text-left">
-                    <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                        <h2 class="logo-font-one my-0">Sweet</h2><h2 class="logo-font-two my-0"> Home</h2>
-                    </a>
-                </div>
-                <div class="col-6 my-auto py-1 py-lg-0">
-                    <ul class="list-inline list-unstyled text-center text-lg-right my-0">
-                        <li class="list-inline-item">
-                            <i class="fas fa-home mx-1"></i>Home
+        <header>
+            <!-- navbar with links to the different pages -->
+            <nav class="navbar navbar-expand-lg">
+                <a href="" class="navbar-brand"><p class="nb-one">Sweet</p><p class="nb-two">Home</p></a>
+                <button class="navbar-toggler" id="hamburger-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent23" aria-controls="navbarSupportedContent23" aria-expanded="false" aria-label="Toggle navigation">
+                    <div class="animated-icon"><span></span><span></span><span></span><span></span></div>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent23">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="" class="nav-link"><i class="fas fa-home mx-1"></i>Home</a>
                         </li>
-                        <li class="list-inline-item">
-                            <i class="fas fa-info-circle mx-1"></i>Info
+                        <li class="nav-item">
+                            <a href="" class="nav-link"><i class="fas fa-info-circle mx-1"></i>Info</a>
                         </li>
-                        <li class="list-inline-item">
-                            <i class="fas fa-house-user mx-1"></i>Houses
+                        <li class="nav-item">
+                            <a href="" class="nav-link"><i class="fas fa-house-user mx-1"></i>Houses</a>
                         </li>
-                        <li class="list-inline-item">
-                            <i class="fas fa-envelope mx-1"></i>Contact
+                        <li class="nav-item">
+                            <a href="" class="nav-link"><i class="fas fa-envelope mx-1"></i>Contact</a>
                         </li>
-                        <li class="list-inline-item">
-                            <i class="fas fa-user mx-1"></i>My account
+                        <li class="nav-item">
+                            <a href="" class="nav-link"><i class="fas fa-user mx-1"></i>My account</a>
                         </li>
                     </ul>
                 </div>
-            </div>
+            </nav>
         </header>
 
         {% if messages %}

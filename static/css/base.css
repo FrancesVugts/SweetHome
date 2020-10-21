@@ -1,41 +1,227 @@
+/*--------------------------------------------------HTML*/
+
 html {
     height: 100%;
 }
 
+/*--------------------------------------------------Body*/
+
 body {
     background: url('/media/homepage.jpg') no-repeat center center fixed;
     background-size: cover;
-    height: calc(100vh - 164px);
+    height: calc(100vh - 4.5rem);
     color: #7E3A57;
     font-family: 'Poiret One';
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
 }
 
-.logo-font-one {
-    display: inline;
+/*--------------------------------------------------Header*/
+
+header {
+    height: 4.5rem;
+}
+
+.navbar {
+    z-index: 1;
+    height: 4.5rem;
+    background: #FFFFFF;
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-brand {
     font-family: 'Poiret One';
+    font-weight: 600;
+    font-size: 2.5rem;
+    margin-left: 1rem;
+    margin-right: 0;
+}
+
+.nb-one {
+    color: #7E3A57;
+    display: inline-block;
+    margin: 0;
+}
+
+.nb-one:hover {
     color: #7E3A57;
 }
 
-.logo-font-two {
-    display: inline;
-    font-family: 'Poiret One';
+.nb-two {
+    color: #069D93;
+    display: inline-block;
+    margin: 0;
+}
+
+.nb-two:hover {
     color: #069D93;
 }
 
-.main-logo-link {
-    width: fit-content;
+@media only screen and (min-width:350px) {
+    .navbar-brand {
+        margin-left: 1.5rem;
+    }
 }
+
+.navbar-nav {
+    background: #FFFFFF;
+}
+
+@media only screen and (min-width: 992px) {
+    .navbar-nav {
+        background: none;
+        border-bottom: none;
+    }
+}
+
+.nav-link {
+    color: #000501;
+    text-align: center;
+    font-family: 'Open Sans';
+}
+
+.nav-link:hover {
+    color: #000501;
+    background: #FFFFFF;
+}
+
+@media only screen and (min-width: 992px) {
+    .nav-link {
+        font-size: 1.1rem;
+        padding: 0 !important;
+        margin-right: 1.5rem;
+    }
+
+    .nav-link:hover {
+        border-bottom: 1px solid #069D93;
+    }
+}
+
+.active {
+    background: #069D93;
+    color: #FFFFFF;
+}
+
+@media only screen and (min-width: 992px) {
+    .active {
+        border-bottom: 1px solid #069D93;
+    }
+}
+
+/*--------------------------------------------------Hamburger menu: code from md bootstrap*/
+.navbar-toggler {
+    margin-right: 1rem;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+@media only screen and (min-width:350px) {
+    .navbar-toggler {
+        margin-right: 1.5rem;
+    }
+}
+
+#hamburger-button {
+    outline: none;
+}
+
+.animated-icon {
+    width: 30px;
+    height: 20px;
+    position: relative;
+    margin: 0px;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    cursor: pointer;
+}
+
+.animated-icon span {
+    display: block;
+    position: absolute;
+    background: #000501;
+    height: 3px;
+    width: 100%;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+}
+
+.animated-icon span:nth-child(1) {
+    top: 0px;
+}
+
+.animated-icon span:nth-child(2), .animated-icon span:nth-child(3) {
+    top: 10px;
+}
+
+.animated-icon span:nth-child(4) {
+    top: 20px;
+}
+
+.animated-icon.open span:nth-child(1) {
+    top: 11px;
+    width: 0%;
+    left: 50%;
+}
+
+.animated-icon.open span:nth-child(2) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.animated-icon.open span:nth-child(3) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+.animated-icon.open span:nth-child(4) {
+    top: 11px;
+    width: 0%;
+    left: 50%;
+}
+
+.animated-icon:hover span {
+    background: #000501;
+}
+
+/*--------------------------------------------------Main*/
 
 .search-now-button {
     background: #069D93;
     color: #FFFFFF;
-    min-width: 260px;
+    min-width: 220px;
+    font-family: 'Open Sans';
 }
 
 .search-now-button:hover {
     background: #000501;
     color: #FFFFFF;
     min-width: 260px;
+    font-family: 'Open Sans';
 }
 
 .text-black {
@@ -49,19 +235,4 @@ body {
   .container {
     max-width: 80%;
   }
-}
-
-/* fixed top navbar only on medium and up */
-@media (min-width: 992px) {
-    .fixed-top-desktop-only {
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        z-index: 1030;
-    }
-
-    .header-container {
-        padding-top: 164px;
-    }
 }
