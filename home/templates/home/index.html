@@ -1,14 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
-    </div>
-{% endblock %}
-
 {% block content %}
     <div class="container">
         <div class="row">
@@ -18,7 +10,7 @@
                 </h1>
                 <div>
                     <h4>
-                        <a class="search-now-button btn rounded-0 text-uppercase py-3">search now</a>
+                        <a href="{% url 'houses' %}" class="search-now-button btn rounded-0 text-uppercase py-3">search now</a>
                     </h4>
                 </div>
             </div>
