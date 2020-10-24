@@ -2,7 +2,28 @@
 {% load static %}
 
 {% block page_header %}
-    <h1>test 1</h1>
+    <nav class="houses-header">
+        <ul class="houses-navbar-nav">
+            <li class="houses-nav-text">
+                Filter by:
+            </li>
+            <li class="houses-nav-item">
+                <a href="" class="houses-nav-link">Location</a>
+            </li>
+            <li class="houses-nav-item">
+                <a href="" class="houses-nav-link">Price</a>
+            </li>
+            <li class="houses-nav-item">
+                <a href="" class="houses-nav-link">Type</a>
+            </li>
+            <li class="houses-nav-item">
+                <a href="" class="houses-nav-link">Bedrooms</a>
+            </li>
+        </ul>
+        <button type="button" class="houses-clear-btn">
+            Clear
+        </button>
+    </nav>
 {% endblock %}
 
 {% block content %}
@@ -10,7 +31,7 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <h2>test 2</h2>
+                    <h2>Available houses</h2>
                 </div>
             </div>
         </div>
