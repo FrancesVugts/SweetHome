@@ -44,8 +44,8 @@
             "energy_label": "D",
             "m2": 66,
             "m3": 134,
-            "start_date": "25-10-2020",
-            "end_date": "08-11-2020",
+            "start_date": "24-10-2020",
+            "end_date": "07-11-2020",
             "description": "This neat apartment with two bedrooms is located in the center of Boxtel. With this apartment you can do al your shoppings just around the corner. This apartment also has an elevator so you don't have to cary everything up the stairs afterwards."
         }
     },
@@ -69,38 +69,13 @@
             "energy_label": "C",
             "m2": 85,
             "m3": 177,
-            "start_date": "26-10-2020",
-            "end_date": "09-11-2020",
+            "start_date": "24-10-2020",
+            "end_date": "07-11-2020",
             "description": "This house has been fully renovated in 2016. Because of it's recent renovation, this house is in a very good condition. It is a house with 3 floors, 4 bedrooms and a nice garden. This makes it very suitable for a big family."
         }
     },
     {
         "pk": 4,
-        "model": "houses.house",
-        "fields": {
-            "sku": "a2",
-            "photo_1": "apartment-front.jpg",
-            "photo_2": "apartment-living.jpg",
-            "photo_3": "apartment-kitchen.jpg",
-            "photo_4": "apartment-bedroom.jpg",
-            "photo_5": "apartment-balcony.jpg",
-            "address": "Hoogheem 105",
-            "postal_code": "5283 BE",
-            "city": "Boxtel",
-            "price": 555.00,
-            "type": 2,
-            "bedrooms": 2,
-            "construction_year": 1986,
-            "energy_label": "D",
-            "m2": 66,
-            "m3": 134,
-            "start_date": "25-10-2020",
-            "end_date": "08-11-2020",
-            "description": "This neat apartment with two bedrooms is located in the center of Boxtel. With this apartment you can do al your shoppings just around the corner. This apartment also has an elevator so you don't have to cary everything up the stairs afterwards."
-        }
-    },
-    {
-        "pk": 5,
         "model": "houses.house",
         "fields": {
             "sku": "h3",
@@ -122,6 +97,31 @@
             "start_date": "24-10-2020",
             "end_date": "07-11-2020",
             "description": "This house has been fully renovated in 2018. Therefore the house is in perfect condition. The house is in a very nice neighbourhood and the center of Drunen is at walking distance."
+        }
+    },
+    {
+        "pk": 5,
+        "model": "houses.house",
+        "fields": {
+            "sku": "a2",
+            "photo_1": "apartment-front.jpg",
+            "photo_2": "apartment-living.jpg",
+            "photo_3": "apartment-kitchen.jpg",
+            "photo_4": "apartment-bedroom.jpg",
+            "photo_5": "apartment-balcony.jpg",
+            "address": "Hoogheem 105",
+            "postal_code": "5283 BE",
+            "city": "Boxtel",
+            "price": 555.00,
+            "type": 2,
+            "bedrooms": 2,
+            "construction_year": 1986,
+            "energy_label": "D",
+            "m2": 66,
+            "m3": 134,
+            "start_date": "25-10-2020",
+            "end_date": "08-11-2020",
+            "description": "This neat apartment with two bedrooms is located in the center of Boxtel. With this apartment you can do al your shoppings just around the corner. This apartment also has an elevator so you don't have to cary everything up the stairs afterwards."
         }
     },
     {
@@ -194,8 +194,8 @@
             "energy_label": "B",
             "m2": 54,
             "m3": 110,
-            "start_date": "25-10-2020",
-            "end_date": "08-11-2020",
+            "start_date": "26-10-2020",
+            "end_date": "09-11-2020",
             "description": "This 2 bedroom apartment is in a good condition. The apartment is in a calm neighbourhood and it has a mall at walking distance. Also the higway is nearby. You can reach the city center in 10 minutes by bike."
         }
     },
@@ -219,8 +219,8 @@
             "energy_label": "A",
             "m2": 91,
             "m3": 184,
-            "start_date": "24-10-2020",
-            "end_date": "07-11-2020",
+            "start_date": "26-10-2020",
+            "end_date": "09-11-2020",
             "description": "This apartment has been fully renovated in 2009. This makes it a nice apartment with enough room. There are two nice parks withing walking distance. Therefore the apartment is very suitable for someone that wants to live in the city, but would also like some nature nearby."
         }
     },
@@ -244,8 +244,8 @@
             "energy_label": "A",
             "m2": 75,
             "m3": 155,
-            "start_date": "25-10-2020",
-            "end_date": "08-11-2020",
+            "start_date": "27-10-2020",
+            "end_date": "10-11-2020",
             "description": "Very nice apartment with a big balcony and a big living with open kitchen. You have your own parking space underneath the building. There is a shopping center nearby. Also the trainstation is at a walking distance."
         }
     }
