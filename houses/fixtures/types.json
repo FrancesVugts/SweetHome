@@ -10,7 +10,7 @@
         "pk": 2,
         "model": "houses.type",
         "fields": {
-            "name": "apartement"
+            "name": "apartment"
         }
     }
 ]
