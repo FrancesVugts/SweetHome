@@ -3,7 +3,7 @@
         "pk": 1,
         "model": "houses.house",
         "fields": {
-            "sku": "h1",
+            "sku": "h202000001",
             "photo_1": "house/house-front.jpg",
             "photo_2": "house/house-living.jpg",
             "photo_3": "house/house-kitchen.jpg",
@@ -28,7 +28,7 @@
         "pk": 2,
         "model": "houses.house",
         "fields": {
-            "sku": "a1",
+            "sku": "h202000002",
             "photo_1": "apartment/apartment-front.jpg",
             "photo_2": "apartment/apartment-living.jpg",
             "photo_3": "apartment/apartment-kitchen.jpg",
@@ -53,7 +53,7 @@
         "pk": 3,
         "model": "houses.house",
         "fields": {
-            "sku": "h2",
+            "sku": "h202000003",
             "photo_1": "house/house-front.jpg",
             "photo_2": "house/house-living.jpg",
             "photo_3": "house/house-kitchen.jpg",
@@ -78,7 +78,7 @@
         "pk": 4,
         "model": "houses.house",
         "fields": {
-            "sku": "h3",
+            "sku": "h202000004",
             "photo_1": "house/house-front.jpg",
             "photo_2": "house/house-living.jpg",
             "photo_3": "house/house-kitchen.jpg",
@@ -103,7 +103,7 @@
         "pk": 5,
         "model": "houses.house",
         "fields": {
-            "sku": "a2",
+            "sku": "h202000005",
             "photo_1": "apartment/apartment-front.jpg",
             "photo_2": "apartment/apartment-living.jpg",
             "photo_3": "apartment/apartment-kitchen.jpg",
@@ -128,7 +128,7 @@
         "pk": 6,
         "model": "houses.house",
         "fields": {
-            "sku": "a3",
+            "sku": "h202000006",
             "photo_1": "apartment/apartment-front.jpg",
             "photo_2": "apartment/apartment-living.jpg",
             "photo_3": "apartment/apartment-kitchen.jpg",
@@ -153,7 +153,7 @@
         "pk": 7,
         "model": "houses.house",
         "fields": {
-            "sku": "h4",
+            "sku": "h202000007",
             "photo_1": "house/house-front.jpg",
             "photo_2": "house/house-living.jpg",
             "photo_3": "house/house-kitchen.jpg",
@@ -178,7 +178,7 @@
         "pk": 8,
         "model": "houses.house",
         "fields": {
-            "sku": "a4",
+            "sku": "h202000008",
             "photo_1": "apartment/apartment-front.jpg",
             "photo_2": "apartment/apartment-living.jpg",
             "photo_3": "apartment/apartment-kitchen.jpg",
@@ -203,7 +203,7 @@
         "pk": 9,
         "model": "houses.house",
         "fields": {
-            "sku": "h5",
+            "sku": "h202000009",
             "photo_1": "house/house-front.jpg",
             "photo_2": "house/house-living.jpg",
             "photo_3": "house/house-kitchen.jpg",
@@ -228,7 +228,7 @@
         "pk": 10,
         "model": "houses.house",
         "fields": {
-            "sku": "a5",
+            "sku": "h202000010",
             "photo_1": "apartment/apartment-front.jpg",
             "photo_2": "apartment/apartment-living.jpg",
             "photo_3": "apartment/apartment-kitchen.jpg",
