@@ -27,13 +27,39 @@
 {% endblock %}
 
 {% block content %}
-    <div class="overlay">
+    <div class="overlay-houses">
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <h2>Available houses</h2>
-                    {{ houses }}
+
                 </div>
+            </div>
+            <div class="row">
+                {% for house in houses %}
+                    <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
+                        <div class="card">
+                            {% if house.photo_1 %}
+                                <a href="">
+                                    <img class="card-img-top img-fluid" src="{{ house.photo_1.url }}" alt="{{ house.name }}">
+                                </a>
+                            {% else %}
+                                <a href="">
+                                    <img class="card-img-top img-fluid" src="{{ house.photo_1.url }}" alt="{{ house.name }}">
+                                </a>
+                            {% endif %}
+                            <div class="card-body pb-0">
+                                <p class="mb-0">{{ house.address }}</p>
+                            </div>
+                            <div class="card-footer bg-white pt-0 text-left">
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="lead mb-0 text-left font-weight-bold">${{ house.price }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
             </div>
         </div>
     </div>
