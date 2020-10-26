@@ -29,9 +29,9 @@
 {% block content %}
     <div class="overlay-houses">
         <div class="container">
-            <div class="row">
+            <div class="row my-5">
                 <div class="col">
-
+                    <h1 class="text-center">Available houses</h1>
                 </div>
             </div>
             <div class="row">
@@ -47,15 +47,14 @@
                                     <img class="card-img-top img-fluid" src="{{ house.photo_1.url }}" alt="{{ house.name }}">
                                 </a>
                             {% endif %}
-                            <div class="card-body pb-0">
-                                <p class="mb-0">{{ house.address }}</p>
+                            <div class="card-body">
+                                <h4>{{ house.address }},</h4>
+                                <h4>{{ house.city }}</h4>
+                                <p>Closing date: {{ house.end_date }}</p>
+
                             </div>
-                            <div class="card-footer bg-white pt-0 text-left">
-                                <div class="row">
-                                    <div class="col">
-                                        <p class="lead mb-0 text-left font-weight-bold">${{ house.price }}</p>
-                                    </div>
-                                </div>
+                            <div class="card-footer">
+                                €{{ house.price }}
                             </div>
                         </div>
                     </div>
