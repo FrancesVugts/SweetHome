@@ -27,25 +27,21 @@
 {% endblock %}
 
 {% block content %}
-    <div class="overlay-houses">
-        <div class="container">
+    <div class="overlay">
+        <div class="container container-houses">
             <div class="row my-5">
                 <div class="col">
-                    <h1 class="text-center">Available houses</h1>
+                    <h1 class="text-center page-title">Available houses</h1>
                 </div>
             </div>
             <div class="row">
                 {% for house in houses %}
                     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3">
-                        <div class="card">
+                        <div class="card rounded-0 mb-4">
                             {% if house.photo_1 %}
-                                <a href="">
-                                    <img class="card-img-top img-fluid" src="{{ house.photo_1.url }}" alt="{{ house.name }}">
-                                </a>
+                                <img class="card-img-top img-fluid rounded-0" src="{{ house.photo_1.url }}" alt="{{ house.name }}">
                             {% else %}
-                                <a href="">
-                                    <img class="card-img-top img-fluid" src="{{ house.photo_1.url }}" alt="{{ house.name }}">
-                                </a>
+                                <img class="card-img-top img-fluid rounded-0" src="{{ house.photo_1.url }}" alt="{{ house.name }}">
                             {% endif %}
                             <div class="card-body">
                                 <h4>{{ house.address }},</h4>
@@ -53,7 +49,7 @@
                                 <p>Closing date: {{ house.end_date }}</p>
 
                             </div>
-                            <div class="card-footer">
+                            <div class="card-footer rounded-0">
                                 €{{ house.price }}
                             </div>
                         </div>

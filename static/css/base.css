@@ -14,12 +14,9 @@ body {
     min-height: 100%;
 }
 
-.overlay-houses {
-	height: 100%;
+.overlay {
+	min-height: 100%;
     width: 100%;
-    top: 7rem;
-    left: 0;
-    position: fixed;
     background: #FFFFFF;
     z-index: -1;
 }
@@ -135,57 +132,6 @@ header {
         color: #7E3A57;
         border-bottom: 2px solid #069D93;
     }
-}
-
-/*--------------------------------------------------Houses header*/
-
-.houses-header {
-    height: 2.5rem;
-    background: #7E3A57;
-    color: #FFFFFF;
-    position: fixed;
-    right: 0;
-    left: 0;
-    top: 4.5rem;
-    padding: 0;
-    margin: 0;
-}
-
-.houses-navbar-nav {
-    padding: 0;
-    margin: 0;
-    line-height: 2.5rem;
-    display: inline-block;
-}
-
-.houses-nav-text {
-    display: inline-block;
-}
-
-.houses-nav-item {
-    list-style-type: none;
-    display: inline;
-}
-
-.houses-nav-text, .houses-nav-link {
-    color: #FFFFFF;
-    text-align: center;
-    font-family: 'Open Sans';
-    font-weight: 100;
-    padding: 0 !important;
-    margin-left: 1.5rem;
-}
-
-.houses-nav-link:hover {
-    color: #FFFFFF;
-}
-
-.houses-clear-btn {
-    background: #069D93;
-    color: #FFFFFF;
-    font-family: 'Open Sans';
-    display: inline-block;
-    margin-left: 1.5rem;
 }
 
 /*--------------------------------------------------Hamburger menu: code from md bootstrap*/
@@ -324,6 +270,89 @@ header {
         font-size: 1.2rem;
         min-width: 225px;
     }
+}
+
+/*--------------------------------------------------Main*/
+
+.page-title {
+    font-family: 'Poiret One';
+    font-weight: 600;
+}
+
+/*--------------------------------------------------Houses header*/
+
+.houses-header {
+    height: 2.5rem;
+    background: #7E3A57;
+    color: #FFFFFF;
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 4.5rem;
+    padding: 0;
+    margin: 0;
+}
+
+.houses-navbar-nav {
+    padding: 0;
+    margin: 0;
+    line-height: 2.5rem;
+    display: inline-block;
+}
+
+.houses-nav-text {
+    display: inline-block;
+}
+
+.houses-nav-item {
+    list-style-type: none;
+    display: inline;
+}
+
+.houses-nav-text, .houses-nav-link {
+    color: #FFFFFF;
+    text-align: center;
+    font-family: 'Open Sans';
+    font-weight: 100;
+    padding: 0 !important;
+    margin-left: 1.5rem;
+}
+
+.houses-nav-link:hover {
+    color: #FFFFFF;
+}
+
+.houses-clear-btn {
+    background: #069D93;
+    color: #FFFFFF;
+    font-family: 'Open Sans';
+    display: inline-block;
+    margin-left: 1.5rem;
+}
+
+/*--------------------------------------------------Houses page*/
+
+.container-houses {
+    padding-top: 2.5rem;
+}
+
+.card {
+    border: 1px solid #069D93;
+}
+
+.card-img-top, .card-body {
+    border-bottom: 1px solid #069D93;
+}
+
+.card-footer {
+    background-color: #069D93;
+    color: #FFFFFF;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
 }
 
 /* -------------------------------- Media Queries */
