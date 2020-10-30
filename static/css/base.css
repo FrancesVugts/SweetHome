@@ -18,7 +18,6 @@ body {
 	min-height: calc(100vh - 4.5rem);
     width: 100%;
     background: #FFFFFF;
-    z-index: -1;
 }
 
 /*--------------------------------------------------Header*/
@@ -292,6 +291,7 @@ header {
     top: 4.5rem;
     padding: 0;
     margin: 0;
+    z-index: 1;
 }
 
 .houses-navbar-nav {
@@ -338,8 +338,17 @@ header {
 }
 
 .card {
+    color: #000501;
     border: 1px solid #069D93;
     font-family: 'Open Sans';
+}
+
+.card:hover {
+  box-shadow: 0 5px 10px 0 #7E3A57;
+}
+
+.house-link:hover {
+    text-decoration: none;
 }
 
 .card-img-top, .card-body {
