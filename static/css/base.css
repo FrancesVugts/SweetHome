@@ -15,7 +15,7 @@ body {
 }
 
 .overlay {
-	min-height: 100%;
+	min-height: calc(100vh - 4.5rem);
     width: 100%;
     background: #FFFFFF;
     z-index: -1;
@@ -228,6 +228,14 @@ header {
     background: #000501;
 }
 
+/*--------------------------------------------------Main*/
+
+.page-title {
+    font-family: 'Poiret One';
+    font-weight: 600;
+    font-size: 3rem;
+}
+
 /*--------------------------------------------------Homepage*/
 
 .search-now-text {
@@ -270,13 +278,6 @@ header {
         font-size: 1.2rem;
         min-width: 225px;
     }
-}
-
-/*--------------------------------------------------Main*/
-
-.page-title {
-    font-family: 'Poiret One';
-    font-weight: 600;
 }
 
 /*--------------------------------------------------Houses header*/
@@ -338,6 +339,7 @@ header {
 
 .card {
     border: 1px solid #069D93;
+    font-family: 'Open Sans';
 }
 
 .card-img-top, .card-body {
