@@ -366,7 +366,27 @@ header {
     object-fit: cover;
 }
 
-/* -------------------------------- Media Queries */
+/*--------------------------------------------------House_info page*/
+
+.big-image {
+    max-height: 30rem;
+}
+
+.small-image-top {
+    max-height: 14rem;
+    margin-bottom: 1rem;
+}
+
+.small-image-bottom {
+    max-height: 14rem;
+    margin-top: 1rem;
+}
+
+#map {
+  height: 30rem;
+}
+
+/* -------------------------------------------------Media Queries */
 
 /* Slightly larger container on sm screens */
 @media (min-width: 768px) {

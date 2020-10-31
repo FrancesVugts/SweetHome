@@ -37,7 +37,7 @@
             <div class="row">
                 {% for house in houses reversed %}
                     <div class="col-sm-6 col-md-6 col-lg-4 col-xl-3 d-flex align-items-stretch">
-                        <a href="{% url 'house_info' house.id %}" class="house-link">
+                        <a href="{% url 'house_info' house.id %}" class="d-flex house-link">
                             <div class="card rounded-0 mb-4">
                                 {% if house.photo_1 %}
                                     <img class="card-img-top img-fluid rounded-0" src="{{ house.photo_1.url }}" alt="{{ house.name }}">
