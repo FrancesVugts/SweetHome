@@ -21,11 +21,11 @@
                 <div class="col-6">
                     {% if house.photo_1 %}
                         <a href="{{ house.photo_1.url }}" target="_blank">
-                            <img class="img-fluid" src="{{ house.photo_1.url }}" alt="{{ house.name }}">
+                            <img class="img-fluid house-photo" src="{{ house.photo_1.url }}" alt="{{ house.name }}">
                         </a>
                     {% else %}
                         <a href="{{ MEDIA_URL }}no_photo.jpg" target="_blank">
-                            <img class="img-fluid" src="{{ MEDIA_URL }}no_photo.jpg" alt="{{ house.name }}">
+                            <img class="img-fluid house-photo" src="{{ MEDIA_URL }}no_photo.jpg" alt="{{ house.name }}">
                         </a>
                     {% endif %}
                 </div>
@@ -34,46 +34,46 @@
                         <div class="col-6">
                             {% if house.photo_2 %}
                                 <a href="{{ house.photo_2.url }}" target="_blank">
-                                    <img class="img-fluid" src="{{ house.photo_2.url }}" alt="{{ house.name }}">
+                                    <img class="img-fluid house-photo" src="{{ house.photo_2.url }}" alt="{{ house.name }}">
                                 </a>
                             {% else %}
                                 <a href="{{ MEDIA_URL }}no_photo.jpg" target="_blank">
-                                    <img class="img-fluid" src="{{ MEDIA_URL }}no_photo.jpg" alt="{{ house.name }}">
+                                    <img class="img-fluid house-photo" src="{{ MEDIA_URL }}no_photo.jpg" alt="{{ house.name }}">
                                 </a>
                             {% endif %}
                         </div>
                         <div class="col-6">
                             {% if house.photo_3 %}
                                 <a href="{{ house.photo_3.url }}" target="_blank">
-                                    <img class="img-fluid" src="{{ house.photo_3.url }}" alt="{{ house.name }}">
+                                    <img class="img-fluid house-photo" src="{{ house.photo_3.url }}" alt="{{ house.name }}">
                                 </a>
                             {% else %}
                                 <a href="{{ MEDIA_URL }}no_photo.jpg" target="_blank">
-                                    <img class="img-fluid" src="{{ MEDIA_URL }}no_photo.jpg" alt="{{ house.name }}">
+                                    <img class="img-fluid house-photo" src="{{ MEDIA_URL }}no_photo.jpg" alt="{{ house.name }}">
                                 </a>
                             {% endif %}
                         </div>
                     </div>
-                    <div class="row">
+                    <div class="row mt-3">
                         <div class="col-6">
                             {% if house.photo_4 %}
                                 <a href="{{ house.photo_4.url }}" target="_blank">
-                                    <img class="img-fluid" src="{{ house.photo_4.url }}" alt="{{ house.name }}">
+                                    <img class="img-fluid house-photo" src="{{ house.photo_4.url }}" alt="{{ house.name }}">
                                 </a>
                             {% else %}
                                 <a href="{{ MEDIA_URL }}no_photo.jpg" target="_blank">
-                                    <img class="img-fluid" src="{{ MEDIA_URL }}no_photo.jpg" alt="{{ house.name }}">
+                                    <img class="img-fluid house-photo" src="{{ MEDIA_URL }}no_photo.jpg" alt="{{ house.name }}">
                                 </a>
                             {% endif %}
                         </div>
-                        <div class="col-6 p-0 m-0">
+                        <div class="col-6">
                             {% if house.photo_5 %}
                                 <a href="{{ house.photo_5.url }}" target="_blank">
-                                    <img class="img-fluid" src="{{ house.photo_5.url }}" alt="{{ house.name }}">
+                                    <img class="img-fluid house-photo" src="{{ house.photo_5.url }}" alt="{{ house.name }}">
                                 </a>
                             {% else %}
                                 <a href="{{ MEDIA_URL }}no_photo.jpg" target="_blank">
-                                    <img class="img-fluid" src="{{ MEDIA_URL }}no_photo.jpg" alt="{{ house.name }}">
+                                    <img class="img-fluid house-photo" src="{{ MEDIA_URL }}no_photo.jpg" alt="{{ house.name }}">
                                 </a>
                             {% endif %}
                         </div>
@@ -91,15 +91,28 @@
                             <strong>Price: </strong>{{ house.price }}<br>
                             <strong>Type: </strong>{{ house.type }}<br>
                             <strong>Bedrooms: </strong>{{ house.bedrooms }}<br>
-                            <strong>m2: </strong>{{ house.m2 }}<br>
-                            <strong>m3: </strong>{{ house.m3 }}<br>
-                            <strong>construction year: </strong>{{ house.construction_year }}<br>
-                            <strong>label: </strong>{{ house.energy_label }}
+                            <strong>M2: </strong>{{ house.m2 }}<br>
+                            <strong>M3: </strong>{{ house.m3 }}<br>
+                            <strong>Construction year: </strong>{{ house.construction_year }}<br>
+                            <strong>Energy label: </strong>{{ house.energy_label }}
                         </p>
                     </div>
                 </div>
                 <div class="col-9">
                     <div id="map"></div>
+                </div>
+            </div>
+            <div class="subscribe-container my-4">
+                <div class="row p-4">
+                    <div class="col-4 d-flex">
+                        <p class="subscribe-date"><strong>Opening date: </strong>{{ house.start_date }}</p>
+                    </div>
+                    <div class="col-4 d-flex justify-content-center">
+                        <p class="subscribe-date"><strong>Closing date: </strong>{{ house.end_date }}</p>
+                    </div>
+                    <div class="col-4">
+                        <button type="button" class="btn subscribe-btn rounded-0">Subscribe!</button>
+                    </div>
                 </div>
             </div>
         </div>
