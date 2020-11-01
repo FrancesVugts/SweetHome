@@ -368,18 +368,11 @@ header {
 
 /*--------------------------------------------------House_info page*/
 
-.big-image {
-    max-height: 30rem;
-}
-
-.small-image-top {
-    max-height: 14rem;
-    margin-bottom: 1rem;
-}
-
-.small-image-bottom {
-    max-height: 14rem;
-    margin-top: 1rem;
+.house-info-container {
+    min-height: 100%;
+    font: 'Open Sans';
+    color: #000501;
+    background: #EFE6E6;
 }
 
 #map {
