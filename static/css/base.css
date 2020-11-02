@@ -389,8 +389,8 @@ header {
 .subscribe-btn {
     background: #069D93;
     color: #FFFFFF;
-    float: right;
     height: 100%;
+    float: none;
 }
 
 .subscribe-btn:hover {
@@ -398,16 +398,23 @@ header {
     color: #FFFFFF;
 }
 
+
+@media (min-width: 768px) {
+    .subscribe-btn {
+        float: right;
+    }
+}
+
 #map {
     width: 100%;
-    height: 30rem;
+    height: 25rem;
 }
 
 /* -------------------------------------------------Media Queries */
 
 /* Slightly larger container on sm screens */
 @media (min-width: 768px) {
-  .container {
-    max-width: 80%;
-  }
+    .container {
+        max-width: 80%;
+    }
 }
