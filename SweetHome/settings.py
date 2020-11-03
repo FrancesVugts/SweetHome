@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'active_link',
     'home',
     'houses',
+    'info',
+    'contact',
 ]
 
 MIDDLEWARE = [
