@@ -7,8 +7,23 @@
             <li class="houses-nav-text">
                 Filter by:
             </li>
-            <li class="houses-nav-item">
-                <a href="" class="houses-nav-link">Location</a>
+            <li class="houses-nav-item dropdown">
+                <a href="#" class="houses-nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Location
+                </a>
+                <div class="dropdown-menu" aria-labelledby="cities-list">
+                    <form class="dropdown-item" action="/action_page.php">
+                        <label for="cities">Choose a city:</label>
+                        <br>
+                        <select name="cities" id="cities">
+                            <option value="all_cities">All cities</option>
+                            {% for house in houses %}
+                                <option value="{{ house.city }}">{{ house.city }}</option>
+                            {% endfor %}
+                        </select>
+                        <input type="submit" value="Ok">
+                    </form>
+                </div>
             </li>
             <li class="houses-nav-item">
                 <a href="" class="houses-nav-link">Price</a>

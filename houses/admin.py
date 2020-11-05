@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import House, Type
+from .models import House, Type, City
 
 
 class HouseAdmin(admin.ModelAdmin):
@@ -19,3 +19,4 @@ class HouseAdmin(admin.ModelAdmin):
 
 admin.site.register(House, HouseAdmin)
 admin.site.register(Type)
+admin.site.register(City)

@@ -7,6 +7,18 @@ class Type(models.Model):
     def __str__(self):
         return self.name
 
+
+class City(models.Model):
+
+    # class Meta:
+    #     verbose_name_plural = 'Cities'
+
+    name = models.CharField(max_length=254)
+
+    def __str__(self):
+        return self.name
+
+
 class House(models.Model):
     sku = models.CharField(max_length=254, null=True, blank=True)
     photo_1 = models.ImageField(null=True, blank=True)
@@ -16,7 +28,7 @@ class House(models.Model):
     photo_5 = models.ImageField(null=True, blank=True)
     address = models.CharField(max_length=254)
     postal_code = models.CharField(max_length=254)
-    city = models.CharField(max_length=254)
+    city = models.ForeignKey('City', null=True, blank=True, on_delete=models.SET_NULL)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     type = models.ForeignKey('Type', null=True, blank=True, on_delete=models.SET_NULL)
     bedrooms = models.IntegerField(null=True, blank=True)

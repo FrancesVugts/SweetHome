@@ -1,0 +1,51 @@
+[
+    {
+        "pk": 1,
+        "model": "houses.city",
+        "fields": {
+            "name": "Boxtel"
+        }
+    },
+    {
+        "pk": 2,
+        "model": "houses.city",
+        "fields": {
+            "name": "Den Bosch"
+        }
+    },
+    {
+        "pk": 3,
+        "model": "houses.city",
+        "fields": {
+            "name": "Drunen"
+        }
+    },
+    {
+        "pk": 4,
+        "model": "houses.city",
+        "fields": {
+            "name": "Heeswijk-Dinther"
+        }
+    },
+    {
+        "pk": 5,
+        "model": "houses.city",
+        "fields": {
+            "name": "Liempde"
+        }
+    },
+    {
+        "pk": 6,
+        "model": "houses.city",
+        "fields": {
+            "name": "Oss"
+        }
+    },
+    {
+        "pk": 7,
+        "model": "houses.city",
+        "fields": {
+            "name": "Rosmalen"
+        }
+    }
+]
