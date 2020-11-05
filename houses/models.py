@@ -10,8 +10,8 @@ class Type(models.Model):
 
 class City(models.Model):
 
-    # class Meta:
-    #     verbose_name_plural = 'Cities'
+    class Meta:
+        verbose_name_plural = 'Cities'
 
     name = models.CharField(max_length=254)
 
@@ -30,7 +30,7 @@ class House(models.Model):
     postal_code = models.CharField(max_length=254)
     city = models.ForeignKey('City', null=True, blank=True, on_delete=models.SET_NULL)
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    type = models.ForeignKey('Type', null=True, blank=True, on_delete=models.SET_NULL)
+    house_type = models.ForeignKey('Type', null=True, blank=True, on_delete=models.SET_NULL)
     bedrooms = models.IntegerField(null=True, blank=True)
     construction_year = models.IntegerField(null=True, blank=True)
     energy_label = models.CharField(max_length=254, null=True, blank=True)

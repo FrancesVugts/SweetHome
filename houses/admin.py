@@ -5,7 +5,7 @@ from .models import House, Type, City
 class HouseAdmin(admin.ModelAdmin):
     list_display = (
         'sku',
-        'type',
+        'house_type',
         'address',
         'postal_code',
         'city',
