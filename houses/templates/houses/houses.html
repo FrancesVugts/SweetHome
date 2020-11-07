@@ -29,8 +29,24 @@
             <li class="houses-nav-item">
                 <a href="" class="houses-nav-link">Price</a>
             </li>
-            <li class="houses-nav-item">
-                <a href="" class="houses-nav-link">Type</a>
+            <li class="houses-nav-item dropdown">
+                <a href="#" class="houses-nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Type
+                </a>
+                <div class="dropdown-menu rounded-0" aria-labelledby="types-list">
+                    <form class="dropdown-item" method="GET" action="{% url 'houses' %}">
+                        <label for="types">Choose a type:</label>
+                        <br>
+                        <select id="types" name="type_name">
+                            <option value="all_types">All types</option>
+                            {% for type in types %}
+                                <option value="{{ type.name }}">{{ type.name }}</option>
+                            {% endfor %}
+                        </select>
+                        <br>
+                        <button type="submit">Filter</button>
+                    </form>
+                </div>
             </li>
             <li class="houses-nav-item">
                 <a href="" class="houses-nav-link">Bedrooms</a>
