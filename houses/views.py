@@ -1,11 +1,14 @@
 from django.shortcuts import render, get_object_or_404
 from .models import House, Type, City
+from datetime import date
 
 
 def view_houses(request):
     """ A view to render the houses page """
 
     houses = House.objects.all()
+    today = today = str(date.today())
+    houses = houses.filter(end_date__gte=today) & houses.filter(start_date__lte=today)
     types = Type.objects.all()
     cities = City.objects.all()
     city_name_query = None
@@ -24,7 +27,7 @@ def view_houses(request):
     if 'min-price' and 'max-price' in request.GET:
         min_price_query = request.GET['min-price']
         max_price_query = request.GET['max-price']
-        houses = houses.filter(price__gte=min_price_query) and houses.filter(price__lte=max_price_query)
+        houses = houses.filter(price__gte=min_price_query) & houses.filter(price__lte=max_price_query)
 
     if 'type_name' in request.GET:
         type_name_query = request.GET['type_name']
