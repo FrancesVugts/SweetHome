@@ -11,17 +11,18 @@
                 <a href="#" class="houses-nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Location
                 </a>
-                <div class="dropdown-menu" aria-labelledby="cities-list">
-                    <form class="dropdown-item" action="/action_page.php">
+                <div class="dropdown-menu rounded-0" aria-labelledby="cities-list">
+                    <form class="dropdown-item" method="GET" action="{% url 'houses' %}">
                         <label for="cities">Choose a city:</label>
                         <br>
-                        <select name="cities" id="cities">
+                        <select id="cities" name="city_name">
                             <option value="all_cities">All cities</option>
-                            {% for house in houses %}
-                                <option value="{{ house.city }}">{{ house.city }}</option>
+                            {% for city in cities %}
+                                <option value="{{ city.name }}">{{ city.name }}</option>
                             {% endfor %}
                         </select>
-                        <input type="submit" value="Ok">
+                        <br>
+                        <button type="submit">Filter</button>
                     </form>
                 </div>
             </li>

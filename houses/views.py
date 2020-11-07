@@ -1,14 +1,21 @@
 from django.shortcuts import render, get_object_or_404
-from .models import House
+from .models import House, City
 
 
 def view_houses(request):
     """ A view to render the houses page """
 
     houses = House.objects.all()
+    cities = City.objects.all()
+    city_name = None
+
+    if 'city_name' in request.GET:
+        city_name = request.GET['city_name'].split(',')
+        houses = houses.filter(city__name__in=city_name)
 
     context = {
         'houses': houses,
+        'cities': cities,
     }
 
     return render(request, 'houses/houses.html', context)
