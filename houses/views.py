@@ -9,15 +9,37 @@ def view_houses(request):
     types = Type.objects.all()
     cities = City.objects.all()
     city_name_query = None
+    min_price_query = None
+    max_price_query = None
     type_name_query = None
+    amount_query = None
 
     if 'city_name' in request.GET:
         city_name_query = request.GET['city_name']
-        houses = houses.filter(city__name__icontains=city_name_query)
+        if city_name_query == "all_cities":
+            houses = houses
+        else:
+            houses = houses.filter(city__name__icontains=city_name_query)
+
+    if 'min-price' and 'max-price' in request.GET:
+        min_price_query = request.GET['min-price']
+        max_price_query = request.GET['max-price']
+        houses = houses.filter(price__gte=min_price_query) and houses.filter(price__lte=max_price_query)
 
     if 'type_name' in request.GET:
         type_name_query = request.GET['type_name']
-        houses = houses.filter(house_type__name__icontains=type_name_query)
+        if type_name_query == "all_types":
+            houses = houses
+        else:
+            houses = houses.filter(house_type__name__icontains=type_name_query)
+
+    if 'amount' in request.GET:
+        amount_query = request.GET['amount']
+        if amount_query == "all_amounts":
+            houses = houses
+        else:
+            amount_query = int(amount_query)
+            houses = houses.filter(bedrooms__gte=amount_query)
 
     context = {
         'houses': houses,
