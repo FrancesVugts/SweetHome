@@ -301,10 +301,6 @@ header {
     display: inline-block;
 }
 
-.houses-nav-text {
-    display: inline-block;
-}
-
 .houses-nav-item {
     list-style-type: none;
     display: inline;

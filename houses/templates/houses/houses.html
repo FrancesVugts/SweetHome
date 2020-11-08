@@ -4,17 +4,13 @@
 {% block page_header %}
     <nav class="houses-header">
         <ul class="houses-navbar-nav">
-            <li class="houses-nav-text">
-                Filter by:
-            </li>
             <li class="houses-nav-item dropdown">
                 <a href="#" class="houses-nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Location
+                    Filter
                 </a>
-                <div class="dropdown-menu rounded-0" aria-labelledby="cities-list">
+                <div class="dropdown-menu rounded-0" aria-labelledby="filter-menu">
                     <form class="dropdown-item" method="GET" action="{% url 'houses' %}">
                         <label for="cities">Choose a city:</label>
-                        <br>
                         <select id="cities" name="city_name">
                             <option value="all_cities">All cities</option>
                             {% for city in cities %}
@@ -22,33 +18,12 @@
                             {% endfor %}
                         </select>
                         <br>
-                        <button type="submit">Filter</button>
-                    </form>
-                </div>
-            </li>
-            <li class="houses-nav-item dropdown">
-                <a href="#" class="houses-nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Price
-                </a>
-                <div class="dropdown-menu rounded-0" aria-labelledby="price-input">
-                    <form class="dropdown-item" method="GET" action="{% url 'houses' %}">
                         <label for="min-price">Price between:</label>
                         <input type="number" id="min-price" name="min-price">
                         <label for="max-price">and</label>
                         <input type="number" id="max-price" name="max-price">
                         <br>
-                        <button type="submit">Filter</button>
-                    </form>
-                </div>
-            </li>
-            <li class="houses-nav-item dropdown">
-                <a href="#" class="houses-nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Type
-                </a>
-                <div class="dropdown-menu rounded-0" aria-labelledby="types-list">
-                    <form class="dropdown-item" method="GET" action="{% url 'houses' %}">
                         <label for="types">Choose a type:</label>
-                        <br>
                         <select id="types" name="type_name">
                             <option value="all_types">All types</option>
                             {% for type in types %}
@@ -56,18 +31,7 @@
                             {% endfor %}
                         </select>
                         <br>
-                        <button type="submit">Filter</button>
-                    </form>
-                </div>
-            </li>
-            <li class="houses-nav-item dropdown">
-                <a href="#" class="houses-nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Bedrooms
-                </a>
-                <div class="dropdown-menu rounded-0" aria-labelledby="bedrooms-list">
-                    <form class="dropdown-item" method="GET" action="{% url 'houses' %}">
                         <label for="amount">Minimum amount of bedrooms:</label>
-                        <br>
                         <select id="amount" name="amount">
                             <option value="all_amounts">All amounts</option>
                             <option value="1">1</option>
@@ -77,8 +41,13 @@
                         </select>
                         <br>
                         <button type="submit">Filter</button>
-                    </form>
+                    </form>                
                 </div>
+            </li>
+            <li class="houses-nav-item dropdown">
+                <a href="#" class="houses-nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Sort
+                </a>
             </li>
         </ul>
         <button type="button" class="houses-clear-btn">
