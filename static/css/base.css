@@ -303,10 +303,10 @@ header {
 
 .houses-nav-item {
     list-style-type: none;
-    display: inline;
+    display: inline-block;
 }
 
-.houses-nav-text, .houses-nav-link {
+.houses-nav-link {
     color: #FFFFFF;
     text-align: center;
     font-family: 'Open Sans';
@@ -317,14 +317,6 @@ header {
 
 .houses-nav-link:hover {
     color: #FFFFFF;
-}
-
-.houses-clear-btn {
-    background: #069D93;
-    color: #FFFFFF;
-    font-family: 'Open Sans';
-    display: inline-block;
-    margin-left: 1.5rem;
 }
 
 /*--------------------------------------------------Houses page*/
