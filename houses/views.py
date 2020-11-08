@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404
+from django.db.models import Q
 from .models import House, Type, City
 from datetime import date
 
@@ -7,40 +8,40 @@ def view_houses(request):
     """ A view to render the houses page """
 
     houses = House.objects.all()
-    today = today = str(date.today())
-    houses = houses.filter(end_date__gte=today) & houses.filter(start_date__lte=today)
     types = Type.objects.all()
     cities = City.objects.all()
-    city_name_query = None
-    min_price_query = None
-    max_price_query = None
-    type_name_query = None
+
+    active_queries = None
+    city_query = None
+    min_pr_query = None
+    max_pr_query = None
+    price_queries = None
+    type_query = None
     amount_query = None
 
+    today = today = str(date.today())
+    active_queries = Q(end_date__gte=today) & Q(start_date__lte=today)
+    houses = houses.filter(active_queries)
+
     if 'city_name' in request.GET:
-        city_name_query = request.GET['city_name']
-        if city_name_query == "all_cities":
-            houses = houses
-        else:
-            houses = houses.filter(city__name__icontains=city_name_query)
+        city_query = request.GET['city_name']
+        if city_query != "all_cities":
+            houses = houses.filter(city__name__icontains=city_query)
 
     if 'min-price' and 'max-price' in request.GET:
-        min_price_query = request.GET['min-price']
-        max_price_query = request.GET['max-price']
-        houses = houses.filter(price__gte=min_price_query) & houses.filter(price__lte=max_price_query)
+        min_pr_query = request.GET['min-price']
+        max_pr_query = request.GET['max-price']
+        price_queries = Q(price__gte=min_pr_query) & Q(price__lte=max_pr_query)
+        houses = houses.filter(price_queries)
 
     if 'type_name' in request.GET:
-        type_name_query = request.GET['type_name']
-        if type_name_query == "all_types":
-            houses = houses
-        else:
-            houses = houses.filter(house_type__name__icontains=type_name_query)
+        type_query = request.GET['type_name']
+        if type_query != "all_types":
+            houses = houses.filter(house_type__name__icontains=type_query)
 
     if 'amount' in request.GET:
         amount_query = request.GET['amount']
-        if amount_query == "all_amounts":
-            houses = houses
-        else:
+        if amount_query != "all_amounts":
             amount_query = int(amount_query)
             houses = houses.filter(bedrooms__gte=amount_query)
 
