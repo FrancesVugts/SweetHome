@@ -328,6 +328,7 @@ header {
 
 .filter-menu-item:hover {
     background: #EFE6E6;
+    color: #000501;
 }
 
 .sort-menu-item:hover {

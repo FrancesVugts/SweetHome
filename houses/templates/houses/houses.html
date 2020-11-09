@@ -10,25 +10,25 @@
                 </a>
                 <div class="dropdown-menu filter-menu rounded-0">
                     <form class="dropdown-item filter-menu-item" method="GET" action="{% url 'houses' %}">
-                        <label for="cities"><strong>Choose a city: </strong></label>
+                        <label for="cities"><strong>Choose a city:</strong></label>
                         <select class="form-control rounded-0" id="cities" name="city_name">
                             <option value="all_cities">All cities</option>
                             {% for city in cities %}
                                 <option value="{{ city.name }}">{{ city.name }}</option>
                             {% endfor %}
                         </select>
-                        <label for="min-price"><strong>Price between: </strong></label>
+                        <label for="min-price"><strong>Price between:</strong></label>
                         <input class="form-control rounded-0" type="number" id="min-price" name="min-price" value="0">
                         <label for="max-price"><strong>and</strong></label>
                         <input class="form-control rounded-0" type="number" id="max-price" name="max-price" value="1000">
-                        <label for="types"><strong>Choose a type: </strong></label>
+                        <label for="types"><strong>Choose a type:</strong></label>
                         <select class="form-control rounded-0" id="types" name="type_name">
                             <option value="all_types">All types</option>
                             {% for type in types %}
                                 <option value="{{ type.name }}">{{ type.name }}</option>
                             {% endfor %}
                         </select>
-                        <label for="amount"><strong>Minimum amount of bedrooms: </strong></label>
+                        <label for="amount"><strong>Minimum amount of bedrooms:</strong></label>
                         <select class="form-control rounded-0" id="amount" name="amount">
                             <option value="all_amounts">All amounts</option>
                             <option value="1">1</option>
