@@ -28,16 +28,13 @@ def view_houses(request):
     houses = houses.filter(active_queries)
 
     if 'sort' in request.GET:
-        sortkey = request.GET['sort']
-        sort = sortkey
-        if sortkey == 'name':
-            sortkey = 'lower_name'
-            houses = houses.annotate(lower_name=Lower('name'))
-        if 'direction' in request.GET:
-            direction = request.GET['direction']
+        sort_request = request.GET['sort'].split(',')
+        if sort_request[0] != "no_sorting":
+            sortkey = sort_request[0]
+            direction = sort_request[1]
             if direction == 'desc':
                 sortkey = f'-{sortkey}'
-        houses = houses.order_by(sortkey)
+            houses = houses.order_by(sortkey)
 
     if 'city_name' in request.GET:
         city_query = request.GET['city_name']
@@ -61,13 +58,10 @@ def view_houses(request):
             amount_query = int(amount_query)
             houses = houses.filter(bedrooms__gte=amount_query)
 
-    current_sorting = f'{sort}_{direction}'
-
     context = {
         'houses': houses,
         'cities': cities,
         'types': types,
-        'current_sorting': current_sorting,
     }
 
     return render(request, 'houses/houses.html', context)

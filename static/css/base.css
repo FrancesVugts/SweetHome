@@ -320,22 +320,6 @@ header {
     color: #FFFFFF;
 }
 
-.filter-menu, .sort-menu {
-    background: #EFE6E6;
-    color: #000501;
-    font-family: 'Open Sans';
-}
-
-.filter-menu-item:hover {
-    background: #EFE6E6;
-    color: #000501;
-}
-
-.sort-menu-item:hover {
-    background: #069D93;
-    color: #FFFFFF;
-}
-
 .filter-btn {
     background: #069D93;
     color: #FFFFFF;
@@ -343,6 +327,16 @@ header {
 
 .filter-btn:hover {
     background: #7E3A57;
+    color: #FFFFFF;
+}
+
+.close-btn {
+    background: #7E3A57;;
+    color: #FFFFFF;
+}
+
+.close-btn:hover {
+    background: #069D93;
     color: #FFFFFF;
 }
 

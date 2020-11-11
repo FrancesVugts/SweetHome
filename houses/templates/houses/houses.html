@@ -5,11 +5,35 @@
     <nav class="houses-header">
         <ul class="houses-navbar-nav">
             <li class="houses-nav-item dropdown">
-                <a href="#" class="houses-nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Filter
+                <a type="button" class="houses-nav-link" data-toggle="modal" data-target="#myModal">
+                    Set filters
                 </a>
-                <div class="dropdown-menu filter-menu rounded-0">
-                    <form class="dropdown-item filter-menu-item" method="GET" action="{% url 'houses' %}">
+                <!--
+                    <a href="{% url 'houses' %}?sort=price&direction=desc"><strong>Sort price low to high</strong></a>
+                    <a href="{% url 'houses' %}?sort=price&direction=asc"><strong>Sort price high to low</strong></a>
+                    <a href="{% url 'houses' %}?sort=city&direction=desc"><strong>Sort cityname A to Z</strong></a>
+                    <a href="{% url 'houses' %}?sort=city&direction=asc"><strong>Sort cityname Z to A</strong></a>
+                -->
+            </li>
+            <li class="houses-nav-item">
+                <a href="{% url 'houses' %}" class="houses-nav-link">
+                    Clear filters
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Filters</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form method="GET" action="{% url 'houses' %}">
                         <label for="cities"><strong>Choose a city:</strong></label>
                         <select class="form-control rounded-0" id="cities" name="city_name">
                             <option value="all_cities">All cities</option>
@@ -17,18 +41,28 @@
                                 <option value="{{ city.name }}">{{ city.name }}</option>
                             {% endfor %}
                         </select>
-                        <label for="min-price"><strong>Price between:</strong></label>
-                        <input class="form-control rounded-0" type="number" id="min-price" name="min-price" value="0">
-                        <label for="max-price"><strong>and</strong></label>
-                        <input class="form-control rounded-0" type="number" id="max-price" name="max-price" value="1000">
-                        <label for="types"><strong>Choose a type:</strong></label>
+                        <div class="form-row mt-3">
+                            <div class="col-12">
+                                <label for="min-price"><strong>Price between:</strong></label>
+                            </div>
+                            <div class="col-5">
+                                <input class="form-control rounded-0" type="number" id="min-price" name="min-price" value="0">
+                            </div>
+                            <div class="col-2 text-center">
+                                <label for="max-price"><strong>and</strong></label>
+                            </div>
+                            <div class="col-5">
+                                <input class="form-control rounded-0" type="number" id="max-price" name="max-price" value="1000">
+                            </div>
+                        </div>
+                        <label  class="mt-3" for="types"><strong>Choose a type:</strong></label>
                         <select class="form-control rounded-0" id="types" name="type_name">
                             <option value="all_types">All types</option>
                             {% for type in types %}
                                 <option value="{{ type.name }}">{{ type.name }}</option>
                             {% endfor %}
                         </select>
-                        <label for="amount"><strong>Minimum amount of bedrooms:</strong></label>
+                        <label class="mt-3" for="amount"><strong>Minimum amount of bedrooms:</strong></label>
                         <select class="form-control rounded-0" id="amount" name="amount">
                             <option value="all_amounts">All amounts</option>
                             <option value="1">1</option>
@@ -36,28 +70,21 @@
                             <option value="3">3</option>
                             <option value="4">4+</option>
                         </select>
-                        <button class="form-control mt-3 rounded-0 filter-btn" type="submit">Filter</button>
-                    </form>                
+                        <label class="mt-3" for="sorting"><strong>Sorting:</strong></label>
+                        <select class="form-control rounded-0" id="sorting" name="sort">
+                            <option value="no_sorting">No sorting</option>
+                            <option value="price,desc">Sort price low to high</option>
+                            <option value="price,asc">Sort price high to low</option>
+                            <option value="city,desc">Sort cityname A to Z</option>
+                            <option value="city,asc">Sort cityname Z to A</option>
+                        </select>
+                        <button class="btn mt-4 rounded-0 close-btn" type="button" data-dismiss="modal">Close menu</button>
+                        <button class="btn mt-4 rounded-0 filter-btn" type="submit">Save filters</button>
+                    </form>  
                 </div>
-            </li>
-            <li class="houses-nav-item dropdown">
-                <a href="#" class="houses-nav-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Sort
-                </a>
-                <div class="dropdown-menu sort-menu rounded-0">
-                    <a class="dropdown-item sort-menu-item" href="{% url 'houses' %}?sort=price&direction=desc"><strong>Sort price low to high</strong></a>
-                    <a class="dropdown-item sort-menu-item" href="{% url 'houses' %}?sort=price&direction=asc"><strong>Sort price high to low</strong></a>
-                    <a class="dropdown-item sort-menu-item" href="{% url 'houses' %}?sort=city&direction=desc"><strong>Sort cityname A to Z</strong></a>
-                    <a class="dropdown-item sort-menu-item" href="{% url 'houses' %}?sort=city&direction=asc"><strong>Sort cityname Z to A</strong></a>
-                </div>
-            </li>
-            <li class="houses-nav-item">
-                <a href="{% url 'houses' %}" class="houses-nav-link">
-                    Clear
-                </a>
-            </li>
-        </ul>
-    </nav>
+            </div>
+        </div>
+    </div>
 {% endblock %}
 
 {% block content %}
