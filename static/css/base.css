@@ -439,6 +439,10 @@ header {
     display: none;
 }
 
+.allauth-form-inner-content input::placeholder {
+    color: #AAB7C4;
+}
+
 .allauth-form-inner-content button,
 .allauth-form-inner-content input[type='submit'] {
 	display: inline-block;
