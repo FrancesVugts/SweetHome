@@ -14,3 +14,13 @@
 #id_country option:first-child {
     color: #AAB7C4;
 }
+
+.update-info-btn {
+    background: #069D93;
+    color: #FFFFFF;
+}
+
+.update-info-btn:hover {
+    background: #7E3A57;
+    color: #FFFFFF;
+}

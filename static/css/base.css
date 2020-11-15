@@ -18,6 +18,7 @@ body {
 	min-height: calc(100vh - 4.5rem);
     width: 100%;
     background: #FFFFFF;
+    font-family: 'Open Sans';
 }
 
 /*--------------------------------------------------Header*/
@@ -472,6 +473,7 @@ header {
 
 .allauth-form-inner-content a {
 	color: #7E3A57;
+    font-style: italic;
 }
 
 /* -------------------------------------------------Media Queries */
