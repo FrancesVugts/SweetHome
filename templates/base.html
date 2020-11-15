@@ -59,9 +59,18 @@
                         <li class="nav-item">
                             <a href="{% url 'contact' %}" class="nav-link {% active_link 'contact' strict=True %}"><i class="fas fa-envelope mx-1"></i>Contact</a>
                         </li>
-                        <li class="nav-item">
-                            <a href="{% url 'account_login' %}" class="nav-link"><i class="fas fa-user mx-1"></i>Log in</a>
-                        </li>
+                        {% if request.user.is_authenticated %}
+                            <li class="nav-item">
+                                <a href="{% url 'profile' %}" class="nav-link {% active_link 'profile' strict=True %}"><i class="fas fa-user mx-1"></i>Profile</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{% url 'account_logout' %}" class="nav-link {% active_link 'account_logout' strict=True %}"><i class="fas fa-sign-out-alt mx-1"></i>Log out</a>
+                            </li>
+                        {% else %}
+                            <li class="nav-item">
+                                <a href="{% url 'account_login' %}" class="nav-link {% active_link 'account_login' strict=True %}"><i class="fas fa-sign-in-alt mx-1"></i>Log in</a>
+                            </li>
+                        {% endif %}
                     </ul>
                 </div>
             </nav>
