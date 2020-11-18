@@ -14,13 +14,27 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-12 col-lg-6">
+                <div class="col-12 col-lg-6 {% if show != 'Form' %} d-none {% endif %}">
                     <p>Personal information</p>
                     <form class="mt-3" action="{% url 'profile' %}" method="POST" id="profile-update-form">
                         {% csrf_token %}
                         {{ form|crispy }}
                         <button class="btn update-info-btn rounded-0">Update information</button>
                     </form>
+                </div>
+                <div class="col-12 col-lg-6 {% if show != 'Info' %} d-none {% endif %}">
+                    <p>Personal information</p>
+                    {{ profile.initials }}<br>
+                    {{ profile.first_name }}<br>
+                    {{ profile.last_name }}<br>
+                    {{ profile.gender }}<br>
+                    {{ profile.date_of_birth }}<br>
+                    {{ profile.address }}<br>
+                    {{ profile.postcode }}<br>
+                    {{ profile.city }}<br>
+                    {{ profile.country }}<br>
+                    {{ profile.email }}<br>
+                    {{ profile.phone_number }}
                 </div>
                 <div class="col-12 col-lg-6">
                     <p>House subscriptions</p>
