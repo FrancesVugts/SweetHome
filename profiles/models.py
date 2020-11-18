@@ -1,4 +1,5 @@
 from django.db import models
+from houses.models import House
 from django.contrib.auth.models import User
 from django.db.models.signals import post_save
 from django.dispatch import receiver
@@ -43,3 +44,15 @@ def create_or_update_user_profile(sender, instance, created, **kwargs):
         UserProfile.objects.create(user=instance)
     # Existing users: just save the profile
     instance.userprofile.save()
+
+
+class Subscription(models.Model):
+    """
+    A subscription model for maintaining wich
+    user would like to have a go at wich house
+    """
+    user = models.OneToOneField('UserProfile', null=True, blank=True, on_delete=models.SET_NULL)
+    house = models.OneToOneField(House, null=True, blank=True, on_delete=models.SET_NULL)
+
+    def __str__(self):
+        return self.user

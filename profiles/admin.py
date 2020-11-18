@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import UserProfile
+from .models import UserProfile, Subscription
 
 
 class ProfileAdmin(admin.ModelAdmin):
@@ -16,4 +16,12 @@ class ProfileAdmin(admin.ModelAdmin):
     )
 
 
+class SubsciptionAdmin(admin.ModelAdmin):
+    list_display = (
+        'user',
+        'house',
+    )
+
+
 admin.site.register(UserProfile, ProfileAdmin)
+admin.site.register(Subscription, SubsciptionAdmin)
