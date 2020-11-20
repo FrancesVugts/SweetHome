@@ -38,6 +38,9 @@
                 </div>
                 <div class="col-12 col-lg-6">
                     <p>House subscriptions</p>
+                    {% for subscription in subscriptions %}
+                        {{subscription.house}}<br>
+                    {% endfor %}
                 </div>
             </div>
         </div>

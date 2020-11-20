@@ -12,7 +12,6 @@ def view_houses(request):
     cities = City.objects.all()
 
     sortkey = None
-    sort = None
     direction = None
 
     active_queries = None
@@ -23,7 +22,7 @@ def view_houses(request):
     type_query = None
     amount_query = None
 
-    today = today = str(date.today())
+    today = str(date.today())
     active_queries = Q(end_date__gte=today) & Q(start_date__lte=today)
     houses = houses.filter(active_queries)
 

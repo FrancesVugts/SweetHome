@@ -51,8 +51,8 @@ class Subscription(models.Model):
     A subscription model for maintaining wich
     user would like to have a go at wich house
     """
-    user = models.OneToOneField('UserProfile', null=True, blank=True, on_delete=models.SET_NULL)
-    house = models.OneToOneField(House, null=True, blank=True, on_delete=models.SET_NULL)
+    user = models.ForeignKey(UserProfile, null=True, blank=True, on_delete=models.SET_NULL)
+    house = models.ForeignKey(House, null=True, blank=True, on_delete=models.SET_NULL)
 
     def __str__(self):
-        return self.user
+        return str(self.user)
