@@ -1,4 +1,5 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404
+from django.contrib import messages
 from django.db.models import Q
 from .models import House, Type, City
 from .forms import HouseForm
@@ -80,8 +81,18 @@ def house_info(request, house_id):
 
 
 def add_house(request):
-    """ Add a product to the store """
-    form = HouseForm()
+    """ Add a house to the store """
+    if request.method == 'POST':
+        form = HouseForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully added product!')
+            return redirect(reverse('add_house'))
+        else:
+            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+    else:
+        form = HouseForm()
+
     template = 'houses/add_house.html'
     context = {
         'form': form,

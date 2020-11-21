@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib import messages
 
 from .models import UserProfile, Subscription
 from houses.models import House
@@ -15,12 +16,16 @@ def profile(request):
         form = UserProfileForm(request.POST, instance=profile)
         if form.is_valid():
             form.save()
+            messages.success(request, 'Profile updated successfully')
+        else:
+            messages.error(request, 'Update failed. Please ensure the form is valid.')
+    else:
+        form = UserProfileForm(instance=profile)
 
     for attr, value in profile.__dict__.items():
         if value is None:
             show = 'Form'
 
-    form = UserProfileForm(instance=profile)
     template = 'profiles/profile.html'
     context = {
         'form': form,

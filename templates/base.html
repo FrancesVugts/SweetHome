@@ -60,6 +60,11 @@
                             <a href="{% url 'contact' %}" class="nav-link {% active_link 'contact' strict=True %}"><i class="fas fa-envelope mx-1"></i>Contact</a>
                         </li>
                         {% if request.user.is_authenticated %}
+                            {% if request.user.is_superuser %}
+                                <li class="nav-item">
+                                    <a href="{% url 'add_house' %}" class="nav-link {% active_link 'add_house' strict=True %}"><i class="fas fa-laptop-house mx-1"></i>Manage</a>
+                                </li>
+                            {% endif %}
                             <li class="nav-item">
                                 <a href="{% url 'profile' %}" class="nav-link {% active_link 'profile' strict=True %}"><i class="fas fa-user mx-1"></i>Profile</a>
                             </li>
