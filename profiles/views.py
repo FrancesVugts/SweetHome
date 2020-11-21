@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 
 from .models import UserProfile, Subscription
+from houses.models import House
 from .forms import UserProfileForm
 
 
@@ -35,10 +36,10 @@ def add_subscription(request, house_id):
     """ Add the house to the subscriptions """
 
     redirect_url = request.POST.get('redirect_url')
-    profile = get_object_or_404(UserProfile, user=request.user)
-    user = profile.id
-    house = house_id
-    print(house)
-    print(user)
+
+    if request.method == 'POST':
+        user = get_object_or_404(UserProfile, user=request.user)
+        house = get_object_or_404(House, pk=house_id)
+        Subscription.objects.create(user=user, house=house)
 
     return redirect(redirect_url)
