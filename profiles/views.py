@@ -40,6 +40,14 @@ def add_subscription(request, house_id):
     if request.method == 'POST':
         user = get_object_or_404(UserProfile, user=request.user)
         house = get_object_or_404(House, pk=house_id)
-        Subscription.objects.create(user=user, house=house)
+        subscriptions = Subscription.objects.all()
+        alreadyExists = False
+
+        for subscription in subscriptions:
+            if user == subscription.user and house == subscription.house:
+                alreadyExists = True
+
+        if not alreadyExists:
+            Subscription.objects.create(user=user, house=house)
 
     return redirect(redirect_url)
