@@ -162,7 +162,11 @@
                         <p class="subscribe-date"><strong>Closing date: </strong>{{ house.end_date }}</p>
                     </div>
                     <div class="col-12 col-md-4">
-                        <button type="button" class="btn subscribe-btn rounded-0">Subscribe!</button>
+                        <form class="form" action="{% url 'add_subscription' house.id %}" method="POST">
+                        {% csrf_token %}
+                            <button type="submit" class="btn subscribe-btn rounded-0">Subscribe!</button>
+                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                        </form>
                     </div>
                 </div>
             </div>

@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 
 from .models import UserProfile, Subscription
 from .forms import UserProfileForm
@@ -7,8 +7,8 @@ from .forms import UserProfileForm
 def profile(request):
     """ Display the user's profile. """
     profile = get_object_or_404(UserProfile, user=request.user)
-    show = 'Info'
     subscriptions = Subscription.objects.filter(user=profile.id)
+    show = 'Info'
 
     if request.method == 'POST':
         form = UserProfileForm(request.POST, instance=profile)
@@ -29,3 +29,16 @@ def profile(request):
     }
 
     return render(request, template, context)
+
+
+def add_subscription(request, house_id):
+    """ Add the house to the subscriptions """
+
+    redirect_url = request.POST.get('redirect_url')
+    profile = get_object_or_404(UserProfile, user=request.user)
+    user = profile.id
+    house = house_id
+    print(house)
+    print(user)
+
+    return redirect(redirect_url)
