@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.db.models import Q
 from .models import House, Type, City
+from .forms import HouseForm
 from datetime import date
 
 
@@ -76,3 +77,14 @@ def house_info(request, house_id):
     }
 
     return render(request, 'houses/house_info.html', context)
+
+
+def add_house(request):
+    """ Add a product to the store """
+    form = HouseForm()
+    template = 'houses/add_house.html'
+    context = {
+        'form': form,
+    }
+
+    return render(request, template, context)
