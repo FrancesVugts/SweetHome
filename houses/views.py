@@ -86,16 +86,40 @@ def add_house(request):
         form = HouseForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Successfully added product!')
+            messages.success(request, 'Successfully added house!')
             return redirect(reverse('add_house'))
         else:
-            messages.error(request, 'Failed to add product. Please ensure the form is valid.')
+            messages.error(request, 'Failed to add house. Please ensure the form is valid.')
     else:
         form = HouseForm()
 
     template = 'houses/add_house.html'
     context = {
         'form': form,
+    }
+
+    return render(request, template, context)
+
+
+def edit_house(request, house_id):
+    """ Edit a product in the store """
+    house = get_object_or_404(House, pk=house_id)
+    if request.method == 'POST':
+        form = HouseForm(request.POST, request.FILES, instance=house)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully updated house!')
+            return redirect(reverse('house_info', args=[house.id]))
+        else:
+            messages.error(request, 'Failed to update house. Please ensure the form is valid.')
+    else:
+        form = HouseForm(instance=house)
+        messages.info(request, f'You are editing {house.address}')
+
+    template = 'houses/edit_house.html'
+    context = {
+        'form': form,
+        'house': house,
     }
 
     return render(request, template, context)
