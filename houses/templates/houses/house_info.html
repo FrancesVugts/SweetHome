@@ -148,8 +148,8 @@
                             <strong>Energy label: </strong>{{ house.energy_label }}<br>
                             <br>
                             {% if request.user.is_superuser %}
-                            <a class="edit-link" href="{% url 'edit_house' house.id %}">Edit</a> | 
-                            <a class="delete-link" href="{% url 'delete_house' house.id %}">Delete</a>
+                            <a class="delete-link" data-toggle="modal" data-target="#myModal-{{house.id}}"href="{% url 'delete_house' house.id %}">Delete</a> | 
+                            <a class="edit-link" href="{% url 'edit_house' house.id %}">Edit</a>
                             {% endif %}
                         </p>
                     </div>
@@ -173,6 +173,19 @@
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </form>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- When deleting a house, this modal will become visible to check if that's really what the user wants to do -->
+    <div class="modal fade" id="myModal-{{house.id}}">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <h5 class="modal-title">Are you sure you want to delete house {{house.address}}?</h5>
+                    <a href="" class="btn mt-4 rounded-0 no-btn">No</a>
+                    <a href="{% url 'delete_house' house.id %}" class="btn mt-4 rounded-0 yes-btn">Yes</a>
                 </div>
             </div>
         </div>

@@ -321,23 +321,13 @@ header {
     color: #FFFFFF;
 }
 
-.filter-btn {
+.filter-btn, .close-btn:hover {
     background: #069D93;
     color: #FFFFFF;
 }
 
-.filter-btn:hover {
-    background: #7E3A57;
-    color: #FFFFFF;
-}
-
-.close-btn {
+.close-btn, .filter-btn:hover {
     background: #7E3A57;;
-    color: #FFFFFF;
-}
-
-.close-btn:hover {
-    background: #069D93;
     color: #FFFFFF;
 }
 
@@ -391,6 +381,16 @@ header {
 
 .delete-link, .delete-link:hover {
     color: #7E3A57;
+}
+
+.yes-btn, .no-btn:hover {
+    background: #069D93;
+    color: #FFFFFF;
+}
+
+.no-btn, .yes-btn:hover {
+    background: #7E3A57;;
+    color: #FFFFFF;
 }
 
 .subscribe-container {
