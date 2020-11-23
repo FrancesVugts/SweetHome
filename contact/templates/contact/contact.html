@@ -1,14 +1,47 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_js %}
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("user_BQpDGx8qrxNM6G0oa17mg");
+        })();
+    </script>
+{% endblock %}
+
 {% block content %}
     <div class="overlay">
         <div class="container">
             <div class="row my-5">
                 <div class="col-12">
                     <h1 class="text-center page-title">Get in touch</h1>
+                    <h5 class="text-center page-subtitle">In case of any questions, use the form below!</h5>
+                </div>
+            </div>
+            <div class="row mb-4 justify-content-center">
+                <div class="col-12 col-md-7">
+                    <form class="form" onsubmit="return sendMail(this);">
+                        <div class="form-group">
+                            <label for="name">Your name:</label>
+                            <input type="text" id="name" name="name" class="form-control border-dark rounded-0" required/>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Your email:</label>
+                            <input type="email" id="email" name="email" class="form-control border-dark rounded-0" required/>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Your message:</label>
+                            <textarea rows="5" id="message" name="message" class="form-control border-dark rounded-0" required></textarea>
+                        </div>
+                        <button type="submit" class="btn contact-btn rounded-0 float-right">Submit</button>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
+{% endblock %}
+
+{% block postloadjs %}
+    <script type="text/javascript" src="../static/js/sendmail.js"></script>
 {% endblock %}
