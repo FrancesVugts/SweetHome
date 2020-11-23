@@ -135,7 +135,7 @@
                 <div class="col-12 col-md-6 col-lg-4 mb-4 mb-md-0">
                     <div class="house-info-container p-4">
                         <h4>Properties</h4><br>
-                        <p>
+                        <p class="mb-0">
                             <strong>Street + nr: </strong>{{ house.address }}<br>
                             <strong>Postal code: </strong>{{ house.postal_code }}<br>
                             <strong>City: </strong>{{ house.city }}<br>
@@ -145,7 +145,12 @@
                             <strong>M2: </strong>{{ house.m2 }}<br>
                             <strong>M3: </strong>{{ house.m3 }}<br>
                             <strong>Construction year: </strong>{{ house.construction_year }}<br>
-                            <strong>Energy label: </strong>{{ house.energy_label }}
+                            <strong>Energy label: </strong>{{ house.energy_label }}<br>
+                            <br>
+                            {% if request.user.is_superuser %}
+                            <a class="edit-link" href="{% url 'edit_house' house.id %}">Edit</a> | 
+                            <a class="delete-link" href="{% url 'delete_house' house.id %}">Delete</a>
+                            {% endif %}
                         </p>
                     </div>
                 </div>
