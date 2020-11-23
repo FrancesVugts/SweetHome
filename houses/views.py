@@ -81,13 +81,13 @@ def house_info(request, house_id):
 
 
 def add_house(request):
-    """ Add a house to the store """
+    """ Add a house """
     if request.method == 'POST':
         form = HouseForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
+            house = form.save()
             messages.success(request, 'Successfully added house!')
-            return redirect(reverse('add_house'))
+            return redirect(reverse('house_info', args=[house.id]))
         else:
             messages.error(request, 'Failed to add house. Please ensure the form is valid.')
     else:
@@ -102,7 +102,7 @@ def add_house(request):
 
 
 def edit_house(request, house_id):
-    """ Edit a product in the store """
+    """ Edit a house """
     house = get_object_or_404(House, pk=house_id)
     if request.method == 'POST':
         form = HouseForm(request.POST, request.FILES, instance=house)
@@ -123,3 +123,11 @@ def edit_house(request, house_id):
     }
 
     return render(request, template, context)
+
+
+def delete_house(request, house_id):
+    """ Delete a house """
+    house = get_object_or_404(House, pk=house_id)
+    house.delete()
+    messages.success(request, 'House deleted!')
+    return redirect(reverse('houses'))
