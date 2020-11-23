@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from .models import House, Type, City
 from .forms import HouseForm
@@ -80,8 +81,13 @@ def house_info(request, house_id):
     return render(request, 'houses/house_info.html', context)
 
 
+@login_required
 def add_house(request):
     """ Add a house """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only house management can do that.')
+        return redirect(reverse('home'))
+
     if request.method == 'POST':
         form = HouseForm(request.POST, request.FILES)
         if form.is_valid():
@@ -101,8 +107,13 @@ def add_house(request):
     return render(request, template, context)
 
 
+@login_required
 def edit_house(request, house_id):
     """ Edit a house """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only house management can do that.')
+        return redirect(reverse('home'))
+
     house = get_object_or_404(House, pk=house_id)
     if request.method == 'POST':
         form = HouseForm(request.POST, request.FILES, instance=house)
@@ -125,8 +136,13 @@ def edit_house(request, house_id):
     return render(request, template, context)
 
 
+@login_required
 def delete_house(request, house_id):
     """ Delete a house """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only house management can do that.')
+        return redirect(reverse('home'))
+
     house = get_object_or_404(House, pk=house_id)
     house.delete()
     messages.success(request, 'House deleted!')
