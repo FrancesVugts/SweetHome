@@ -6,25 +6,19 @@
         <div class="container">
             <div class="row my-5">
                 <div class="col-12">
-                    <h1 class="logo-font mb-4">Product Management</h1>
-                    <h5>Add a house</h5>
+                    <h1 class="text-center page-title">Product Management</h1>
+                    <h5 class="text-center page-subtitle">Add a house</h5>
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-12 col-md-6">
+            <div class="row mb-4 justify-content-center">
+                <div class="col-12 col-md-7">
                     <form method="POST" action="{% url 'add_house' %}" class="form mb-2" enctype="multipart/form-data">
                         {% csrf_token %}
-                        {% for field in form %}
-                            {% if field.name != 'image' %}
-                                {{ field | as_crispy_field }}
-                            {% else %}
-                                {{ field }}
-                            {% endif %}
-                        {% endfor %}
+                        {{ form|crispy }}
                         <div class="text-right">
-                            <a class="btn btn-outline-black rounded-0" href="{% url 'houses' %}">Cancel</a>
-                            <button class="btn btn-black rounded-0" type="submit">Add House</button>
+                            <a class="btn cancel-btn rounded-0" href="{% url 'houses' %}">Cancel</a>
+                            <button class="btn add-btn rounded-0" type="submit">Add House</button>
                         </div>
                     </form>
                 </div>            

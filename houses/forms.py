@@ -19,4 +19,4 @@ class HouseForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
 
         for field_name, field in self.fields.items():
-            field.widget.attrs['class'] = 'rounded-0'
+            field.widget.attrs['class'] = 'border-dark rounded-0'

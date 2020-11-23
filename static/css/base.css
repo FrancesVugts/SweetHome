@@ -237,6 +237,12 @@ header {
     font-size: 3rem;
 }
 
+.page-subtitle {
+    font-family: 'Poiret One';
+    font-weight: 600;
+    font-size: 2rem;
+}
+
 /*--------------------------------------------------Homepage*/
 
 .search-now-text {
@@ -428,6 +434,44 @@ header {
     height: 27rem;
 }
 
+/* -------------------------------------------------House Form */
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-file input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.custom-checkbox .custom-control-label::before {
+    border-radius: 0;
+    border-color: #7E3A57;
+}
+
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+    background-color: #7E3A57;
+    border-color: #7E3A57;
+    border-radius: 0;
+}
+
+.cancel-btn, .update-btn:hover, .add-btn:hover, .select-btn:hover {
+    background: #7E3A57;
+    color: #FFFFFF;
+}
+
+.update-btn, .add-btn, .select-btn, .cancel-btn:hover {
+    background: #069D93;
+    color: #FFFFFF;
+}
+
 /* -------------------------------------------------Allauth */
 
 .allauth-form-inner-content {
@@ -482,34 +526,6 @@ header {
 .allauth-form-inner-content a {
 	color: #7E3A57;
     font-style: italic;
-}
-
-/* -------------------------------------------------Product Form */
-
-.btn-file {
-    position: relative;
-    overflow: hidden;
-}
-
-.btn-file input[type="file"] {
-    position: absolute;
-    top: 0;
-    right: 0;
-    min-width: 100%;
-    min-height: 100%;
-    opacity: 0;
-    cursor: pointer;
-}
-
-.custom-checkbox .custom-control-label::before {
-    border-radius: 0;
-    border-color: #dc3545;
-}
-
-.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
-    background-color: #dc3545;
-    border-color: #dc3545;
-    border-radius: 0;
 }
 
 /* -------------------------------------------------Media Queries */
