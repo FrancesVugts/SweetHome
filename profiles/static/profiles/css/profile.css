@@ -1,3 +1,5 @@
+/*--------------------------------------------------Profile*/
+
 #profile-update-form .form-control {
     color: #000501;
 }
@@ -21,6 +23,28 @@
 }
 
 .update-info-btn:hover {
+    background: #7E3A57;
+    color: #FFFFFF;
+}
+
+/*--------------------------------------------------Subscriptions*/
+
+.card-prof {
+    display: none;
+}
+
+@media only screen and (min-width:992px) {
+    .card-prof {
+        display: block;
+    }
+}
+
+.unsubscribe-btn {
+    background: #069D93;
+    color: #FFFFFF;
+}
+
+.unsubscribe-btn:hover {
     background: #7E3A57;
     color: #FFFFFF;
 }
