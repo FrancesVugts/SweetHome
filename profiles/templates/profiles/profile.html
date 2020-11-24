@@ -24,17 +24,23 @@
                 </div>
                 <div class="col-12 col-lg-6 mb-4 {% if show != 'Info' %} d-none {% endif %}">
                     <h5 class="text-center page-subtitle mb-4">Personal information</h5>
-                    {{ profile.initials }}<br>
-                    {{ profile.first_name }}<br>
-                    {{ profile.last_name }}<br>
-                    {{ profile.gender }}<br>
-                    {{ profile.date_of_birth }}<br>
-                    {{ profile.address }}<br>
-                    {{ profile.postcode }}<br>
-                    {{ profile.city }}<br>
-                    {{ profile.country }}<br>
-                    {{ profile.email }}<br>
-                    {{ profile.phone_number }}
+                    <p>
+                        <strong>Initials: </strong>{{ profile.initials }}<br>
+                        <strong>First name: </strong>{{ profile.first_name }}<br>
+                        <strong>Last name: </strong>{{ profile.last_name }}<br>
+                        <strong>Gender: </strong>{{ profile.gender }}<br>
+                        <strong>Date of birth: </strong>{{ profile.date_of_birth }}<br>
+                        <strong>Address: </strong>{{ profile.address }}<br>
+                        <strong>Postal code: </strong>{{ profile.postcode }}<br>
+                        <strong>City: </strong>{{ profile.city }}<br>
+                        <strong>Country: </strong>{{ profile.country }}<br>
+                        <strong>Email: </strong>{{ profile.email }}<br>
+                        <strong>Phone number: </strong>{{ profile.phone_number }}
+                    </p>
+                    <form action="{% url 'profile' %}" method="GET">
+                        {% csrf_token %}
+                        <button class="btn update-info-btn rounded-0" id="profile-update" name="profile-update">Adjust information</button>
+                    </form>
                 </div>
                 <div class="col-12 col-lg-6 mb-4">
                     <h5 class="text-center page-subtitle mb-4">House subscriptions</h5>

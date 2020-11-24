@@ -7,9 +7,9 @@ from django.dispatch import receiver
 from django_countries.fields import CountryField
 
 gender_choices = [
-    (0, 'Male'),
-    (1, 'Female'),
-    (2, 'Other'),
+    ('Male', 'Male'),
+    ('Female', 'Female'),
+    ('Other', 'Other'),
     ]
 
 
@@ -22,7 +22,7 @@ class UserProfile(models.Model):
     initials = models.CharField(max_length=20, null=True, blank=True)
     first_name = models.CharField(max_length=20, null=True, blank=True)
     last_name = models.CharField(max_length=20, null=True, blank=True)
-    gender = models.IntegerField(choices=gender_choices, null=True, blank=True)
+    gender = models.CharField(max_length=20, choices=gender_choices, null=True, blank=True)
     date_of_birth = models.DateField(null=True, blank=True)
     address = models.CharField(max_length=80, null=True, blank=True)
     postcode = models.CharField(max_length=20, null=True, blank=True)

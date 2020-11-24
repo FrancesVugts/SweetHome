@@ -35,6 +35,9 @@ def profile(request):
         if value is None:
             show = 'Form'
 
+    if 'profile-update' in request.GET:
+        show = 'Form'
+
     template = 'profiles/profile.html'
     context = {
         'form': form,

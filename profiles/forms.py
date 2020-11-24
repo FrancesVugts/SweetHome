@@ -3,7 +3,7 @@ from .models import UserProfile
 
 
 class UserProfileForm(forms.ModelForm):
-    gender = forms.ChoiceField(label='Gender', choices=[(0, 'Male'), (1, 'Female'), (2, 'Other')], widget=forms.RadioSelect(), required=False)
+    gender = forms.ChoiceField(label='Gender', choices=[('Male', 'Male'), ('Female', 'Female'), ('Other', 'Other')], widget=forms.RadioSelect(), required=False)
 
     class Meta:
         model = UserProfile
