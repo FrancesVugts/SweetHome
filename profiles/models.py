@@ -19,17 +19,17 @@ class UserProfile(models.Model):
     delivery information and order history
     """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    initials = models.CharField(max_length=20, null=True, blank=True)
-    first_name = models.CharField(max_length=20, null=True, blank=True)
-    last_name = models.CharField(max_length=20, null=True, blank=True)
-    gender = models.CharField(max_length=20, choices=gender_choices, null=True, blank=True)
+    initials = models.CharField(max_length=20)
+    first_name = models.CharField(max_length=20)
+    last_name = models.CharField(max_length=20)
+    gender = models.CharField(max_length=20, choices=gender_choices)
     date_of_birth = models.DateField(null=True, blank=True)
-    address = models.CharField(max_length=80, null=True, blank=True)
-    postcode = models.CharField(max_length=20, null=True, blank=True)
-    city = models.CharField(max_length=40, null=True, blank=True)
-    country = CountryField(blank_label='Country', null=True, blank=True)
-    email = models.EmailField(max_length=50, null=True, blank=True)
-    phone_number = models.CharField(max_length=20, null=True, blank=True)
+    address = models.CharField(max_length=80)
+    postcode = models.CharField(max_length=20)
+    city = models.CharField(max_length=40)
+    country = CountryField(blank_label='Country')
+    email = models.EmailField(max_length=50)
+    phone_number = models.CharField(max_length=20)
 
     def __str__(self):
         return self.user.username
