@@ -51,8 +51,8 @@ class Subscription(models.Model):
     A subscription model for maintaining wich
     user would like to have a go at wich house
     """
-    user = models.ForeignKey(UserProfile, null=True, blank=True, on_delete=models.SET_NULL)
-    house = models.ForeignKey(House, null=True, blank=True, on_delete=models.SET_NULL)
+    user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
+    house = models.ForeignKey(House, on_delete=models.CASCADE)
 
     def __str__(self):
         return str(self.user)
