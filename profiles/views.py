@@ -12,14 +12,13 @@ from datetime import date
 @login_required
 def profile(request):
     """ Display the user's profile. """
-    show = 'Info'
-    today = str(date.today())
-    active_queries = Q(end_date__gte=today) & Q(start_date__lte=today)
-    houses = House.objects.filter(active_queries)
     profile = get_object_or_404(UserProfile, user=request.user)
-    subscriptions = Subscription.objects.filter(user=profile.id)
-    # subscriptions = subscriptions.filter(house=houses)
-    print(houses)
+    all_subscriptions = Subscription.objects.filter(user=profile.id)
+    show = 'Info'
+
+    today = str(date.today())
+    active_subscriptions = all_subscriptions.filter(house__end_date__gte=today)
+    subscriptions = active_subscriptions.filter(house__start_date__lte=today)
 
     if request.method == 'POST':
         form = UserProfileForm(request.POST, instance=profile)
