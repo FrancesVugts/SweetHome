@@ -18,4 +18,4 @@ class YearPaymentForm(forms.ModelForm):
 
         self.fields['full_name'].widget.attrs['autofocus'] = True
         for field in self.fields:
-            self.fields[field].widget.attrs['class'] = 'rounded-0 border-dark'
+            self.fields[field].widget.attrs['class'] = 'stripe-style-input'
