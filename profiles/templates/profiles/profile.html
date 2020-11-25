@@ -41,7 +41,7 @@
                         {% csrf_token %}
                         <button class="btn update-info-btn rounded-0" id="profile-update" name="profile-update">Adjust information</button>
                     </form>
-                    <form action="" method="" class="d-inline-flex float-right mr-2">
+                    <form action="{% url 'payment' %}" method="GET" class="d-inline-flex float-right mr-2">
                         {% csrf_token %}
                         <button class="btn payment-btn rounded-0" id="payment" name="payment">Make payment</button>
                     </form>

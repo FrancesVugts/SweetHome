@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="overlay">
+        <div class="container">
+            <div class="row my-5">
+                <div class="col-12">
+                    <h1 class="text-center page-title">Year Payment</h1>
+                </div>
+            </div>
+            <div class="row mb-4 justify-content-center">
+                <div class="col-12 col-md-7">
+                    <p>Please fill out the form below to make a payment for one year access to subscribe to houses</p>
+                    <form action="{% url 'payment' %}" method="POST" id="payment-form">
+                        {% csrf_token %}
+                        <fieldset class="px-3 mb-5">
+                            <legend class="fieldset-label small px-2 w-auto"><strong>Personal Details</strong></legend>
+                            {{ payment_form.full_name | as_crispy_field }}
+                            {{ payment_form.phone_number | as_crispy_field }}
+                            {{ payment_form.email | as_crispy_field }}
+                        </fieldset>
+                        <fieldset class="px-3 mb-5">
+                            <legend class="fieldset-label small px-2 w-auto"><strong>Address Details</strong></legend>
+                            {{ payment_form.country | as_crispy_field }}
+                            {{ payment_form.postcode | as_crispy_field }}
+                            {{ payment_form.town_or_city | as_crispy_field }}
+                            {{ payment_form.street_address1 | as_crispy_field }}
+                            {{ payment_form.street_address2 | as_crispy_field }}
+                        </fieldset>
+                        <fieldset class="px-3">
+                            <legend class="fieldset-label small px-2 w-auto"><strong>Payment Details</strong></legend>
+                            <div class="mb-3" id="card-element"></div>
+                            <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
+                        </fieldset>
+                        <div class="submit-button text-right mt-5 mb-2">
+                            <button id="submit-button" class="btn rounded-0">
+                                <span class="font-weight-bold">Complete Payment</span>
+                                <span class="icon">
+                                    <i class="fas fa-lock"></i>
+                                </span>
+                            </button>
+                            <p class="small text-danger my-0">
+							    <span class="icon">
+								    <i class="fas fa-exclamation-circle"></i>
+							    </span>
+							    <span>Your card will be charged <strong>€ 25.00</strong></span>
+						    </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
