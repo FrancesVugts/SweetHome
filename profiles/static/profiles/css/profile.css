@@ -17,12 +17,12 @@
     color: #AAB7C4;
 }
 
-.update-info-btn {
+.update-info-btn, .payment-btn:hover {
     background: #069D93;
     color: #FFFFFF;
 }
 
-.update-info-btn:hover {
+.update-info-btn:hover, .payment-btn {
     background: #7E3A57;
     color: #FFFFFF;
 }
