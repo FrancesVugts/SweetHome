@@ -43,7 +43,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(23, 162, 184, .85);
+    background: #069D93;
     z-index: 9999;
 }
 
@@ -53,4 +53,14 @@
     justify-content: center;
     margin: 0;
     height: 100%;
+}
+
+.check-houses-btn {
+    background: #069D93;
+    color: #FFFFFF;
+}
+
+.check-houses-btn:hover {
+    background: ##7E3A57;
+    color: #FFFFFF;
 }
