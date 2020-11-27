@@ -8,6 +8,9 @@ class YearPaymentForm(forms.ModelForm):
         fields = ('full_name', 'email', 'phone_number',
                   'street_address1', 'street_address2',
                   'city', 'postcode', 'country',)
+        labels = {
+            'street_address1': 'Address'
+        }
 
     def __init__(self, *args, **kwargs):
         """

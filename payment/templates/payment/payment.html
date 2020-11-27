@@ -30,7 +30,9 @@
                             {{ payment_form.postcode | as_crispy_field }}
                             {{ payment_form.city | as_crispy_field }}
                             {{ payment_form.street_address1 | as_crispy_field }}
-                            {{ payment_form.street_address2 | as_crispy_field }}
+                            <div class="d-none">
+                                {{ payment_form.street_address2 | as_crispy_field }}
+                            <div>
                         </fieldset>
                         <fieldset>
                             <legend class="fieldset-label small px-2 w-auto"><strong>Payment Details</strong></legend>
