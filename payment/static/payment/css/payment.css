@@ -55,12 +55,12 @@
     height: 100%;
 }
 
-.check-houses-btn {
+.check-houses-btn, .payment-btn {
     background: #069D93;
     color: #FFFFFF;
 }
 
-.check-houses-btn:hover {
-    background: ##7E3A57;
+.check-houses-btn:hover, .payment-btn:hover {
+    background: #7E3A57;
     color: #FFFFFF;
 }

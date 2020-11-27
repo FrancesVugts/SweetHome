@@ -15,16 +15,16 @@
             </div>
             <div class="row mb-4 justify-content-center">
                 <div class="col-12 col-md-7">
-                    <p>Please fill out the form below to make a payment for one year access to subscribe to houses</p>
+                    <p class="mb-4">Please fill out the form below to make a payment for one year access to subscribe to houses</p>
                     <form action="{% url 'payment' %}" method="POST" id="payment-form">
                         {% csrf_token %}
-                        <fieldset class="px-3 mb-5">
+                        <fieldset class="mb-4">
                             <legend class="fieldset-label small px-2 w-auto"><strong>Personal Details</strong></legend>
                             {{ payment_form.full_name | as_crispy_field }}
                             {{ payment_form.phone_number | as_crispy_field }}
                             {{ payment_form.email | as_crispy_field }}
                         </fieldset>
-                        <fieldset class="px-3 mb-5">
+                        <fieldset class="mb-4">
                             <legend class="fieldset-label small px-2 w-auto"><strong>Address Details</strong></legend>
                             {{ payment_form.country | as_crispy_field }}
                             {{ payment_form.postcode | as_crispy_field }}
@@ -32,15 +32,15 @@
                             {{ payment_form.street_address1 | as_crispy_field }}
                             {{ payment_form.street_address2 | as_crispy_field }}
                         </fieldset>
-                        <fieldset class="px-3">
+                        <fieldset>
                             <legend class="fieldset-label small px-2 w-auto"><strong>Payment Details</strong></legend>
                             <div class="mb-3" id="card-element"></div>
                             <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
                             <input type="hidden" value="{{ client_secret }}" name="client_secret">
                         </fieldset>
                         <div class="submit-button text-right mt-5 mb-2">
-                            <button id="submit-button" class="btn rounded-0">
-                                <span class="font-weight-bold">Complete Payment</span>
+                            <button id="submit-button" class="btn payment-btn rounded-0 mb-1">
+                                <span>Complete Payment</span>
                                 <span class="icon">
                                     <i class="fas fa-lock"></i>
                                 </span>
