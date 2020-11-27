@@ -1,5 +1,9 @@
+require('dotenv').config()
+const hostname = process.env.MAPS_API_KEY;
+console.log(hostname);
+
 var encodedAddress = encodeURIComponent(address);
-var uri = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodedAddress}&key=AIzaSyChOVURQkrTJydzuZ7kiWFk9cjYWFY0lUs`;
+var uri = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodedAddress}&key=AIzaSyC1_2LQmZ65yW8ttfBbHMgsJFqmc4UlCdY`;
 
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
