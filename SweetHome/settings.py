@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '(6g4k&jcw4z9%nfs#+u!p0)07d$vry--y0%4qvnu*bbx13$58s'
+SECRET_KEY = os.getenv('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -177,7 +177,3 @@ STRIPE_CURRENCY = 'eur'
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
 STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
-
-# Maps
-
-MAPS_API_KEY = os.environ.get('MAPS_API_KEY')
