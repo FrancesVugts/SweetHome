@@ -186,8 +186,8 @@
             <div class="modal-content">
                 <div class="modal-body">
                     <h5 class="modal-title">Are you sure you want to delete house {{house.address}}?</h5>
-                    <a href="" class="btn mt-4 rounded-0 no-btn">No</a>
-                    <a href="{% url 'delete_house' house.id %}" class="btn mt-4 rounded-0 yes-btn">Yes</a>
+                    <a href="{% url 'delete_house' house.id %}" class="btn mt-4 rounded-0 yes-btn float-right">Yes</a>
+                    <a href="" class="btn mt-4 mr-2 rounded-0 no-btn float-right">No</a>
                 </div>
             </div>
         </div>

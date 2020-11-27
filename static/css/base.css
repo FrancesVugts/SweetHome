@@ -564,6 +564,12 @@ header {
     height: 2px;
 }
 
+/* -------------------------------------------------Meodals */
+
+.modal {
+    font-family: 'Open Sans';
+}
+
 /* -------------------------------------------------Media Queries */
 
 /* Slightly larger container on sm screens */
