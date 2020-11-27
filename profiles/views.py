@@ -1,7 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from django.db.models import Q
 
 from .models import UserProfile, Subscription
 from houses.models import House
@@ -30,9 +29,10 @@ def profile(request):
     else:
         form = UserProfileForm(instance=profile)
 
-    for attr, value in profile.__dict__.items():
-        if value is None:
-            show = 'Form'
+    for key, value in profile.__dict__.items():
+        if key != "gender":
+            if value is None:
+                show = 'Form'
 
     if 'profile-update' in request.GET:
         show = 'Form'

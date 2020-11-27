@@ -16,6 +16,11 @@
             <div class="row">
                 <div class="col-12 col-lg-6 mb-4 {% if show != 'Form' %} d-none {% endif %}">
                     <h5 class="text-center page-subtitle mb-4">Personal information</h5>
+                    <p>
+                        Thank you for registering to this page.<br>
+                        In order to subscribe to a house we need you to fill in the details below.
+                        After that you can buy a one year subscription to subscribe to the houses you like.
+                    </p>
                     <form action="{% url 'profile' %}" method="POST" id="profile-update-form">
                         {% csrf_token %}
                         {{ form|crispy }}
@@ -25,6 +30,9 @@
                 <div class="col-12 col-lg-6 mb-4 {% if show != 'Info' %} d-none {% endif %}">
                     <h5 class="text-center page-subtitle mb-4">Personal information</h5>
                     <p>
+                        Please check if the personal info that's known to us is correct<br>
+                        In case you would like to change any information, you can use the "Adjust information" button on the bottom of this page.<br>
+                        <br>
                         <strong>Initials: </strong>{{ profile.initials }}<br>
                         <strong>First name: </strong>{{ profile.first_name }}<br>
                         <strong>Last name: </strong>{{ profile.last_name }}<br>
@@ -35,7 +43,10 @@
                         <strong>City: </strong>{{ profile.city }}<br>
                         <strong>Country: </strong>{{ profile.country }}<br>
                         <strong>Email: </strong>{{ profile.email }}<br>
-                        <strong>Phone number: </strong>{{ profile.phone_number }}
+                        <strong>Phone number: </strong>{{ profile.phone_number }}<br>
+                        <br>
+                        If all the information is correct and you would like to subscribe to one of the houses, you will need a one year subscription.
+                        If you don't have an active subscription, you can buy one by using the "Make payment" button below.
                     </p>
                     <form action="{% url 'profile' %}" method="GET" class="d-inline-flex float-right">
                         {% csrf_token %}
