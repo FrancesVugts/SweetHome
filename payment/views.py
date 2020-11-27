@@ -11,6 +11,7 @@ import stripe
 def payment(request):
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
+    price = 25
 
     if request.method == 'POST':
         form_data = {
@@ -28,14 +29,14 @@ def payment(request):
             payment = payment_form.save(commit=False)
             pid = request.POST.get('client_secret').split('_secret')[0]
             payment.stripe_pid = pid
+            payment.payment_total = price
             payment.save()
             return redirect(reverse('payment_success', args=[payment.payment_number]))
         else:
             messages.error(request, 'There was an error with your form. \
                 Please double check your information.')
     else:
-        total = 25
-        stripe_total = round(total * 100)
+        stripe_total = round(price * 100)
         stripe.api_key = stripe_secret_key
         intent = stripe.PaymentIntent.create(
             amount=stripe_total,
@@ -50,7 +51,7 @@ def payment(request):
 
     template = 'payment/payment.html'
     context = {
-        'total': total,
+        'price': price,
         'payment_form': payment_form,
         'stripe_public_key': stripe_public_key,
         'client_secret': intent.client_secret,

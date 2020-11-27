@@ -14,7 +14,7 @@ class YearPayment(models.Model):
     street_address1 = models.CharField(max_length=80, null=False, blank=False)
     street_address2 = models.CharField(max_length=80, null=True, blank=True)
     date = models.DateTimeField(auto_now_add=True)
-    payment_total = models.DecimalField(default=25, null=False, editable=False, max_digits=10, decimal_places=2)
+    payment_total = models.DecimalField(null=False, editable=False, max_digits=10, decimal_places=2)
     stripe_pid = models.CharField(max_length=254, null=False, blank=False, default='')
 
     def _generate_payment_number(self):
