@@ -25,7 +25,10 @@ def payment(request):
         }
         payment_form = YearPaymentForm(form_data)
         if payment_form.is_valid():
-            payment = payment_form.save()
+            payment = payment_form.save(commit=False)
+            pid = request.POST.get('client_secret').split('_secret')[0]
+            payment.stripe_pid = pid
+            payment.save()
             return redirect(reverse('payment_success', args=[payment.payment_number]))
         else:
             messages.error(request, 'There was an error with your form. \
