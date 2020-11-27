@@ -545,6 +545,25 @@ header {
     font-style: italic;
 }
 
+/* -------------------------------------------------Toasts */
+
+.message-container {
+    position: fixed;
+    top: 4.5rem;
+    bottom: auto;
+    right: 0;
+    left: auto;
+    z-index: 99999999999;
+}
+
+.custom-toast {
+    overflow: visible;
+}
+
+.toast-capper {
+    height: 2px;
+}
+
 /* -------------------------------------------------Media Queries */
 
 /* Slightly larger container on sm screens */
