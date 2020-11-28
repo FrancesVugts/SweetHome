@@ -1,0 +1,1 @@
+web: gunicorn SweetHome.wsgi:application
