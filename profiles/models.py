@@ -23,7 +23,7 @@ class UserProfile(models.Model):
     first_name = models.CharField(max_length=20)
     last_name = models.CharField(max_length=20)
     gender = models.CharField(max_length=20, choices=gender_choices, null=True, blank=True)
-    date_of_birth = models.DateField()
+    date_of_birth = models.DateField(null=True, blank=True)
     address = models.CharField(max_length=80)
     postcode = models.CharField(max_length=20)
     city = models.CharField(max_length=40)

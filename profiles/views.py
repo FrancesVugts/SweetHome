@@ -30,7 +30,7 @@ def profile(request):
         form = UserProfileForm(instance=profile)
 
     for key, value in profile.__dict__.items():
-        if key != "gender":
+        if key != "gender" or key != "date_of_birth":
             if value is None:
                 show = 'Form'
 
