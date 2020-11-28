@@ -1,8 +1,3 @@
-<br>
-<br>
-<br>
-<br>
-<br>
 # SweetHome
 [This website](https://your-sweethome.herokuapp.com/) was created to let people find there dream rentalhome.<br>
 As a user you can look for houses and subscribe to the ones you're interested in.<br>
