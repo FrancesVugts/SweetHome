@@ -1,3 +1,4 @@
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/jLDnW1t/logo.jpg" alt="logo" border="0"></a>
 # SweetHome
 [This website](https://your-sweethome.herokuapp.com/) was created to let people find there dream rentalhome.<br>
 As a user you can look for houses and subscribe to the ones you're interested in.<br>
@@ -50,3 +51,35 @@ I have used the following technologys for this project:
 * [Google Developers](https://developers.google.com/) for adding a map with the houses location.
 * [Google Fonts](https://fonts.google.com/), to choose and combine my fonts.
 * [Coolors](https://coolors.co/), to choose my and combine my colors.
+## Testing
+### Testing User Stories from User Experience (UX) Section
+### Further testing
+### Known bugs
+## Deployment
+This project was created using Github.<br>
+From there I used Gitpod.io to write my code.<br>
+Then I used commits to git followed by pushes to my GitHub repository.<br>
+Later on I've deployed this project to Heroku and used automated pushes to make sure my pushes to GitHub were also made to Heroku.<br>
+For deployment on Heroku I've used the following steps:
+* Using the terminal command pip freeze > requirements.txt I have created a requirements.txt file.
+* Using the terminal command echo web: python app.py > Procfile I have created a procfile.
+* I've used git add, git commit and git push to push the requirements and procfile to GitHub.
+* I've created a new app on the Heroku website by using the "new" button on my dashboard.
+* I gave the app a name of your-sweethome and set the region to Europe.
+* From the Heroku dashboard I've clicked "Deploy" > "Deployment method" and selected GitHub.
+* Confirm the linking of the heroku app to the correct GitHub repository.
+* In the heroku dashboard I've clicked "Settings" > "Reveal Config Vars".
+* I've added the config vars for my AWS_ACCESS_KEY_ID, AWS_SECRET_ACCESS_KEY, DATABASE_URL, EMAIL_HOST_PASS, EMAIL_HOST_USER, SECRET_KEY, STRIPE_PUBLIC_KEY, STRIPE_SECRET_KEY, STRIPE_WH_SECRET, USE_AWS.
+* In the heroku dashboard I've clicked "Deploy".
+* In the "Manual Deployment" section of this page I've made sure the master branch is selected and I've clicked "Deploy Branch".
+* The site was now successfully deployed.
+## Credits
+### Content
+* All the content for this website was writen by the devoloper herself.
+### Media
+* The no_photo image was created by the developer herself.
+* I've used photos from Pexel to fill my database with some examples photos of houses.
+### Acknowledgement
+* I would like to thank my mentor for the feedback througout this project.
+* I would like to thank tutor support for helping me where needed.
+* I've added comments with links when using code from other people, I would like to thank these people as well for providing helpfull information on the internet.
