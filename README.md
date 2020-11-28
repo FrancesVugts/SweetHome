@@ -4,11 +4,6 @@ As a user you can look for houses and subscribe to the ones you're interested in
 As admin you can add houses, update house information or delete houses.<br>
 ## UX
 * User stories
-<br>
-<br>
-<br>
-<br>
-<br>
 * Design
     * Color Scheme
         * I've chosen for 2 popping colors that go well together to make the company stand out.
@@ -25,3 +20,33 @@ As admin you can add houses, update house information or delete houses.<br>
     * Imagery
         * The images on this page would be from the houses that are up for rental.
         In case there is no team image, I've created a default images that fits well with the rest of the website.
+* Wireframes
+## Features
+* I've made sure the site is responsive and easy to use on different devices.
+* The site contains interactive elements like color changes when hovering over elements and a hamburger menu that changes when clicked on.
+* The site contains a register, login and logout option.
+* The site contains a profile page where the user can see it's personal details, and subscriptions.
+* The site contains an admin option who has extra rights on the page.
+* The site contains a contact form in case of problems.
+## Technologies used
+I have used the following technologys for this project:
+* [Github](https://github.com), for version control.
+* [Gitpod](https://gitpod.io), for my development environment.
+* HTML5, because it is the standard markup language for Web Pages.
+* CSS3, to style the website.
+* Javascript, for the use of a contact form.
+* [Python](https://www.python.org), for the backend.
+* [Django](https://www.djangoproject.com/), for my framework.
+* [Django Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/) To render forms.
+* [Postgres SQL](https://www.postgresql.org/), for my database.
+* [Heroku](https://heroku.com), to deploy my app.
+* [EmailJS](https://www.emailjs.com/), to let the user be able to contact me.
+* [Stripe](https://dashboard.stripe.com/register) for online payment.
+* Unittest, for testing my Python code.
+* PIP, to download tools.
+* [JQuery](https://jquery.com) for DOM manipulation.
+* [Bootstrap](https://getbootstrap.com/), to make my website responsive and mobile-first.
+* [Font Awesome](https://fontawesome.com/) for the icons used on this website.
+* [Google Developers](https://developers.google.com/) for adding a map with the houses location.
+* [Google Fonts](https://fonts.google.com/), to choose and combine my fonts.
+* [Coolors](https://coolors.co/), to choose my and combine my colors.
