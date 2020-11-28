@@ -1,4 +1,4 @@
-<a href="https://imgbb.com/"><img src="https://i.ibb.co/jLDnW1t/logo.jpg" alt="logo" border="0"></a>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/jLDnW1t/logo.jpg" alt="logo" border="0"></a><br>
 [This website](https://your-sweethome.herokuapp.com/) was created to let people find there dream rentalhome.<br>
 As a user you can look for houses and subscribe to the ones you're interested in.<br>
 As admin you can add houses, update house information or delete houses.<br>
