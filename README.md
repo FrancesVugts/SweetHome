@@ -1,4 +1,4 @@
-<p align="center"><a href="https://imgbb.com/"><img src="https://i.ibb.co/jLDnW1t/logo.jpg" alt="logo" border="0"></a></p>
+<a href="https://imgbb.com/"><img src="https://i.ibb.co/jLDnW1t/logo.jpg" alt="logo" border="0"></a>
 # SweetHome
 [This website](https://your-sweethome.herokuapp.com/) was created to let people find there dream rentalhome.<br>
 As a user you can look for houses and subscribe to the ones you're interested in.<br>
