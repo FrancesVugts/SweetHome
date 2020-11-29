@@ -3,6 +3,8 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from .models import House, Type, City
+from profiles.models import UserProfile
+from payment.models import YearPayment
 from .forms import HouseForm
 from datetime import date
 
@@ -70,10 +72,18 @@ def view_houses(request):
 
 def house_info(request, house_id):
     # A view to show the information about one specific house
+    profile = get_object_or_404(UserProfile, user=request.user)
+    user_payments = YearPayment.objects.filter(user=profile.id)
+    payment = 'No'
+
     house = get_object_or_404(House, pk=house_id)
+
+    if user_payments:
+        payment = 'Yes'
 
     context = {
         'house': house,
+        'payment': payment,
     }
 
     return render(request, 'houses/house_info.html', context)
