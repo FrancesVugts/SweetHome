@@ -1,9 +1,14 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'houses/css/house.css' %}">
+{% endblock %}
+
 {% block extra_title %} - Houses{% endblock %}
 
 {% block page_header %}
+    <!-- A sub header where the user kan set filters via a model poping up or clear filters if they no longer need them. -->
     <nav class="houses-header">
         <ul class="houses-navbar-nav">
             <li class="houses-nav-item dropdown">
@@ -18,7 +23,7 @@
             </li>
         </ul>
     </nav>
-
+    <!-- The model where the user can set the filters -->
     <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">

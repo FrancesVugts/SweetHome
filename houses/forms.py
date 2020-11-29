@@ -3,6 +3,7 @@ from .widgets import CustomClearableFileInput
 from .models import House
 
 
+# Class to display a form based on the House model
 class HouseForm(forms.ModelForm):
 
     class Meta:

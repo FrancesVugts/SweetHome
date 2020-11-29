@@ -1,0 +1,11 @@
+/*--------------------------------------------------Contact page*/
+
+.contact-btn {
+    background: #069D93;
+    color: #FFFFFF;
+}
+
+.contact-btn:hover {
+    background: #7E3A57;
+    color: #FFFFFF;
+}

@@ -8,8 +8,7 @@ from datetime import date
 
 
 def view_houses(request):
-    """ A view to render the houses page """
-
+    # A view to render the houses page
     houses = House.objects.all()
     types = Type.objects.all()
     cities = City.objects.all()
@@ -70,8 +69,7 @@ def view_houses(request):
 
 
 def house_info(request, house_id):
-    """ A view to show the information about one specific house """
-
+    # A view to show the information about one specific house
     house = get_object_or_404(House, pk=house_id)
 
     context = {
@@ -83,7 +81,7 @@ def house_info(request, house_id):
 
 @login_required
 def add_house(request):
-    """ Add a house """
+    # A view to add a house
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only house management can do that.')
         return redirect(reverse('home'))
@@ -109,7 +107,7 @@ def add_house(request):
 
 @login_required
 def edit_house(request, house_id):
-    """ Edit a house """
+    # A view to edit a house
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only house management can do that.')
         return redirect(reverse('home'))
@@ -138,7 +136,7 @@ def edit_house(request, house_id):
 
 @login_required
 def delete_house(request, house_id):
-    """ Delete a house """
+    # A view to delete a house
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only house management can do that.')
         return redirect(reverse('home'))

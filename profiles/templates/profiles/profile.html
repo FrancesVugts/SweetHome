@@ -16,6 +16,7 @@
                 </div>
             </div>
             <div class="row">
+                <!-- A place for the user to fill in it's personal information -->
                 <div class="col-12 col-lg-6 mb-4 {% if show != 'Form' %} d-none {% endif %}">
                     <h5 class="text-center page-subtitle mb-4">Personal information</h5>
                     <p>
@@ -29,6 +30,7 @@
                         <button class="btn update-info-btn rounded-0">Update information</button>
                     </form>
                 </div>
+                <!-- When the user has filled in the personal information it will be displayed here with a button to be able to update the personal information -->
                 <div class="col-12 col-lg-6 mb-4 {% if show != 'Info' %} d-none {% endif %}">
                     <h5 class="text-center page-subtitle mb-4">Personal information</h5>
                     <p>
@@ -59,6 +61,7 @@
                         <button class="btn payment-btn rounded-0 {% if payment == 'Yes' %} d-none {% endif %}" id="payment" name="payment">Make payment</button>
                     </form>
                 </div>
+                <!-- A display of the users subscriptions with a option to unsubcribe -->
                 <div class="col-12 col-lg-6 mb-4">
                     <h5 class="text-center page-subtitle mb-4">House subscriptions</h5>
                     {% for subscription in subscriptions %}

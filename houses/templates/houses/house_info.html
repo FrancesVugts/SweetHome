@@ -1,12 +1,16 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'houses/css/house.css' %}">
+{% endblock %}
+
 {% block extra_js %}
     <script type="text/javascript"> 
         var address = "{{ house.address }}, {{ house.city }}";
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC1_2LQmZ65yW8ttfBbHMgsJFqmc4UlCdY&callback=initMap&libraries=&v=weekly" defer></script>
-    <script src="{% static 'js/maps.js' %}"></script>
+    <script src="{% static 'houses/js/maps.js' %}"></script>
 {% endblock %}
 
 {% block extra_title %} - House Info{% endblock %}
@@ -19,6 +23,7 @@
                     <h1 class="text-center page-title">{{ house.address }}, {{ house.city }}</h1>
                 </div>
             </div>
+            <!-- A carrousel to the display the photo's on smaller screens -->
             <div class="row d-lg-none">
                 <div class="col-12">
                     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -70,6 +75,7 @@
                     </div>
                 </div>
             </div>
+            <!-- Display the photo's next to each other on bigger screens -->
             <div class="row d-none d-lg-flex">
                 <div class="col-6">
                     {% if house.photo_1 %}
@@ -133,6 +139,7 @@
                     </div>
                 </div>
             </div>
+            <!-- Section with info about the house -->
             <div class="row my-4">
                 <div class="col-12 col-md-6 col-lg-4 mb-4 mb-md-0">
                     <div class="house-info-container p-4">
@@ -149,6 +156,7 @@
                             <strong>Construction year: </strong>{{ house.construction_year }}<br>
                             <strong>Energy label: </strong>{{ house.energy_label }}<br>
                             <br>
+                            <!-- Buttons to edit or delete for superusers -->
                             {% if request.user.is_superuser %}
                             <a class="delete-link" data-toggle="modal" data-target="#myModal-{{house.id}}"href="{% url 'delete_house' house.id %}">Delete</a> | 
                             <a class="edit-link" href="{% url 'edit_house' house.id %}">Edit</a>
@@ -156,10 +164,12 @@
                         </p>
                     </div>
                 </div>
+                <!-- Google map with a marker on the address of the house -->
                 <div class="col-12 col-md-6 col-lg-8">
                     <div id="map"></div>
                 </div>
             </div>
+            <!-- Section for the subscriptions -->
             <div class="subscribe-container my-4">
                 <div class="row p-4">
                     <div class="col-6 col-md-4 d-md-flex">
@@ -172,7 +182,6 @@
                         <form class="form" action="{% url 'add_subscription' house.id %}" method="POST">
                             {% csrf_token %}
                             <button type="submit" class="btn subscribe-btn rounded-0">Subscribe!</button>
-                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </form>
                     </div>
                 </div>
@@ -180,7 +189,7 @@
         </div>
     </div>
 
-    <!-- When deleting a house, this modal will become visible to check if that's really what the user wants to do -->
+    <!-- When deleting a house, this modal will become visible to check if that's really what the superuser wants to do -->
     <div class="modal fade" id="myModal-{{house.id}}">
         <div class="modal-dialog">
             <div class="modal-content">

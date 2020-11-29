@@ -4,6 +4,7 @@ from django.db import models
 from profiles.models import UserProfile
 
 
+# A model for all the YearPayment information
 class YearPayment(models.Model):
     user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
     payment_number = models.CharField(max_length=32, null=False, editable=False)

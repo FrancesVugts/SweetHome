@@ -2,6 +2,7 @@ from django.contrib import admin
 from .models import YearPayment
 
 
+# Class for the representation of the YearPayment model in the admin
 class YearPaymentAdmin(admin.ModelAdmin):
     readonly_fields = ('user', 'payment_number', 'date', 'payment_total',
                        'stripe_pid',)
