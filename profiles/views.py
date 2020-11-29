@@ -4,6 +4,7 @@ from django.contrib.auth.decorators import login_required
 
 from .models import UserProfile, Subscription
 from houses.models import House
+from payment.models import YearPayment
 from .forms import UserProfileForm
 from datetime import date
 
@@ -13,11 +14,16 @@ def profile(request):
     """ Display the user's profile. """
     profile = get_object_or_404(UserProfile, user=request.user)
     all_subscriptions = Subscription.objects.filter(user=profile.id)
+    user_payments = YearPayment.objects.filter(user=profile.id)
     show = 'Info'
+    payment = 'No'
 
     today = str(date.today())
     active_subscriptions = all_subscriptions.filter(house__end_date__gte=today)
     subscriptions = active_subscriptions.filter(house__start_date__lte=today)
+
+    if user_payments:
+        payment = 'Yes'
 
     if request.method == 'POST':
         form = UserProfileForm(request.POST, instance=profile)
@@ -39,6 +45,7 @@ def profile(request):
 
     template = 'profiles/profile.html'
     context = {
+        'payment': payment,
         'form': form,
         'profile': profile,
         'show': show,
