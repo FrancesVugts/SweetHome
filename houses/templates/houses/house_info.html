@@ -187,6 +187,7 @@
                             {% csrf_token %}
                             <button type="submit" class="btn subscribe-btn rounded-0 {% if payment == 'No' or payment == 'Yes' %} d-none {% endif %}">Unsubscribe!</button>
                         </form>
+                        <p class="{% if payment == 'Yes' or payment == 'Subscribed' %} d-none {% endif %}">When logged in and made payment you can subscribe here!</p>
                     </div>
                 </div>
             </div>
