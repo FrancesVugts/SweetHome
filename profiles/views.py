@@ -77,7 +77,7 @@ def add_subscription(request, house_id):
 
 @login_required
 def delete_subscription(request, subscription_id):
-    # Add the house to the subscriptions
+    # Delete the house from the subscriptions
 
     redirect_url = request.POST.get('redirect_url')
 

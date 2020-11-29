@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from .models import House, Type, City
-from profiles.models import UserProfile
+from profiles.models import UserProfile, Subscription
 from payment.models import YearPayment
 from .forms import HouseForm
 from datetime import date
@@ -77,9 +77,18 @@ def house_info(request, house_id):
     payment = 'No'
 
     house = get_object_or_404(House, pk=house_id)
+    subscriptions = Subscription.objects.all()
+    alreadyExists = False
+
+    for subscription in subscriptions:
+        if profile == subscription.user and house == subscription.house:
+            alreadyExists = True
 
     if user_payments:
-        payment = 'Yes'
+        if alreadyExists:
+            payment = 'Subscribed'
+        else:
+            payment = 'Yes'
 
     context = {
         'house': house,
@@ -87,6 +96,22 @@ def house_info(request, house_id):
     }
 
     return render(request, 'houses/house_info.html', context)
+
+
+@login_required
+def del_subscription(request, house_id):
+    # A view to delete a subscription
+    if request.method == 'POST':
+        profile = get_object_or_404(UserProfile, user=request.user)
+        house = get_object_or_404(House, pk=house_id)
+        subscriptions = Subscription.objects.all()
+
+        for subscription in subscriptions:
+            if profile == subscription.user and house == subscription.house:
+                subscription.delete()
+                messages.success(request, 'Unsubscribed!')
+
+    return redirect(reverse(view_houses))
 
 
 @login_required
