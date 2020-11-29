@@ -54,6 +54,10 @@ I have used the following technologys for this project:
 * [Google Fonts](https://fonts.google.com/), to choose and combine my fonts.
 * [Coolors](https://coolors.co/), to choose my and combine my colors.
 ## Testing
+To make sure there where nog syntax errors, I've used the following validators on my pages:
+* [HTML validator](https://validator.w3.org/#validate_by_input)
+* [CSS validator](https://jigsaw.w3.org/css-validator/)
+* [Python validator](https://extendsclass.com/python-tester.html)
 ### Testing User Stories from User Experience (UX) Section
 ### Further testing
 ### Known bugs

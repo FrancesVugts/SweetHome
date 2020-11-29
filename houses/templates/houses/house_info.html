@@ -158,7 +158,7 @@
                             <br>
                             <!-- Buttons to edit or delete for superusers -->
                             {% if request.user.is_superuser %}
-                            <a class="delete-link" data-toggle="modal" data-target="#myModal-{{house.id}}"href="{% url 'delete_house' house.id %}">Delete</a> | 
+                            <a class="delete-link" data-toggle="modal" data-target="#myModal-{{house.id}}" href="{% url 'delete_house' house.id %}">Delete</a> | 
                             <a class="edit-link" href="{% url 'edit_house' house.id %}">Edit</a>
                             {% endif %}
                         </p>

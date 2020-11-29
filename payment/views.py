@@ -68,7 +68,7 @@ def payment_success(request, payment_number):
     # Handle successful payments
     payment = get_object_or_404(YearPayment, payment_number=payment_number)
     messages.success(request, f'Payment successfully processed! \
-        Your order number is {payment_number}. A confirmation \
+        Your payment number is {payment_number}. A confirmation \
         email will be sent to {payment.email}.')
 
     template = 'payment/payment_success.html'
