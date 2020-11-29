@@ -72,23 +72,24 @@ def view_houses(request):
 
 def house_info(request, house_id):
     # A view to show the information about one specific house
-    profile = get_object_or_404(UserProfile, user=request.user)
-    user_payments = YearPayment.objects.filter(user=profile.id)
-    payment = 'No'
-
     house = get_object_or_404(House, pk=house_id)
     subscriptions = Subscription.objects.all()
     alreadyExists = False
+    payment = 'No'
 
-    for subscription in subscriptions:
-        if profile == subscription.user and house == subscription.house:
-            alreadyExists = True
+    if request.user.is_authenticated:
+        profile = get_object_or_404(UserProfile, user=request.user)
+        user_payments = YearPayment.objects.filter(user=profile.id)
 
-    if user_payments:
-        if alreadyExists:
-            payment = 'Subscribed'
-        else:
-            payment = 'Yes'
+        for subscription in subscriptions:
+            if profile == subscription.user and house == subscription.house:
+                alreadyExists = True
+
+        if user_payments:
+            if alreadyExists:
+                payment = 'Subscribed'
+            else:
+                payment = 'Yes'
 
     context = {
         'house': house,
