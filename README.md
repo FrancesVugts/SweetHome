@@ -21,6 +21,9 @@ As admin you can add houses, update house information or delete houses.<br>
         * The images on this page would be from the houses that are up for rental.
         In case there is no team image, I've created a default images that fits well with the rest of the website.
 * Wireframes
+    * [Phone Wireframes](https://i.ibb.co/pKfHT6J/Telefoon.jpg)
+    * [Tablet Wireframes](https://i.ibb.co/gDZy66H/Tablet.jpg)
+    * [Screen Wireframes](https://i.ibb.co/TP6tTTt/laptop.jpg)
 ## Features
 * I've made sure the site is responsive and easy to use on different devices.
 * The site contains interactive elements like color changes when hovering over elements and a hamburger menu that changes when clicked on.

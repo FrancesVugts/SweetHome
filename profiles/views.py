@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 
@@ -52,8 +52,6 @@ def profile(request):
 def add_subscription(request, house_id):
     """ Add the house to the subscriptions """
 
-    redirect_url = request.POST.get('redirect_url')
-
     if request.method == 'POST':
         user = get_object_or_404(UserProfile, user=request.user)
         house = get_object_or_404(House, pk=house_id)
@@ -67,7 +65,7 @@ def add_subscription(request, house_id):
         if not alreadyExists:
             Subscription.objects.create(user=user, house=house)
 
-    return redirect(redirect_url)
+    return redirect(reverse(profile))
 
 
 @login_required
