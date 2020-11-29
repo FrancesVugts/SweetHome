@@ -2,6 +2,7 @@ from django.contrib import admin
 from .models import UserProfile, Subscription
 
 
+# Class for the representation of the UserProfile model in the admin
 class ProfileAdmin(admin.ModelAdmin):
     list_display = (
         'user',
@@ -16,6 +17,7 @@ class ProfileAdmin(admin.ModelAdmin):
     )
 
 
+# Class for the representation of the Subscription model in the admin
 class SubsciptionAdmin(admin.ModelAdmin):
     list_display = (
         'user',

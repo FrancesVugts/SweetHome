@@ -2,6 +2,7 @@ from django import forms
 from .models import YearPayment
 
 
+# Class to display a form based on the YearPayment model
 class YearPaymentForm(forms.ModelForm):
     class Meta:
         model = YearPayment
@@ -13,10 +14,8 @@ class YearPaymentForm(forms.ModelForm):
         }
 
     def __init__(self, *args, **kwargs):
-        """
-        Add placeholders and classes, remove auto-generated
-        labels and set autofocus on first field
-        """
+        # Add placeholders and classes, remove auto-generated
+        # labels and set autofocus on first field
         super().__init__(*args, **kwargs)
 
         self.fields['full_name'].widget.attrs['autofocus'] = True

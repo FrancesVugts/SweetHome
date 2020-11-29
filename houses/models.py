@@ -1,6 +1,7 @@
 from django.db import models
 
 
+# A model for the types of houses
 class Type(models.Model):
     name = models.CharField(max_length=254)
 
@@ -8,6 +9,7 @@ class Type(models.Model):
         return self.name
 
 
+# A model for the cities
 class City(models.Model):
 
     class Meta:
@@ -19,6 +21,7 @@ class City(models.Model):
         return self.name
 
 
+# A model for all the houses information
 class House(models.Model):
     sku = models.CharField(max_length=254, null=True, blank=True)
     address = models.CharField(max_length=254)

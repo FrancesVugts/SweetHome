@@ -2,6 +2,7 @@ from django import forms
 from .models import UserProfile
 
 
+# Class to display a form based on the UserProfile model
 class UserProfileForm(forms.ModelForm):
 
     class Meta:

@@ -14,10 +14,8 @@ gender_choices = [
 
 
 class UserProfile(models.Model):
-    """
-    A user profile model for maintaining default
-    delivery information and order history
-    """
+    # A user profile model for maintaining default
+    # delivery information and order history
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     initials = models.CharField(max_length=20)
     first_name = models.CharField(max_length=20)
@@ -37,9 +35,7 @@ class UserProfile(models.Model):
 
 @receiver(post_save, sender=User)
 def create_or_update_user_profile(sender, instance, created, **kwargs):
-    """
-    Create or update the user profile
-    """
+    # Create or update the user profile
     if created:
         UserProfile.objects.create(user=instance)
     # Existing users: just save the profile
@@ -47,10 +43,8 @@ def create_or_update_user_profile(sender, instance, created, **kwargs):
 
 
 class Subscription(models.Model):
-    """
-    A subscription model for maintaining wich
-    user would like to have a go at wich house
-    """
+    # A subscription model for maintaining wich
+    # user would like to have a go at wich house
     user = models.ForeignKey(UserProfile, on_delete=models.CASCADE)
     house = models.ForeignKey(House, on_delete=models.CASCADE)
 

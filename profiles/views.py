@@ -10,7 +10,7 @@ from datetime import date
 
 @login_required
 def profile(request):
-    """ Display the user's profile. """
+    # Display the user's profile.
     profile = get_object_or_404(UserProfile, user=request.user)
     all_subscriptions = Subscription.objects.filter(user=profile.id)
     show = 'Info'
@@ -50,7 +50,7 @@ def profile(request):
 
 @login_required
 def add_subscription(request, house_id):
-    """ Add the house to the subscriptions """
+    # Add the house to the subscriptions
 
     if request.method == 'POST':
         user = get_object_or_404(UserProfile, user=request.user)
@@ -70,7 +70,7 @@ def add_subscription(request, house_id):
 
 @login_required
 def delete_subscription(request, subscription_id):
-    """ Add the house to the subscriptions """
+    # Add the house to the subscriptions
 
     redirect_url = request.POST.get('redirect_url')
 

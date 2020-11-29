@@ -9,6 +9,7 @@ import stripe
 
 
 def payment(request):
+    # Handle payments
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
     price = 25
@@ -61,9 +62,7 @@ def payment(request):
 
 
 def payment_success(request, payment_number):
-    """
-    Handle successful payments
-    """
+    # Handle successful payments
     payment = get_object_or_404(YearPayment, payment_number=payment_number)
     messages.success(request, f'Payment successfully processed! \
         Your order number is {payment_number}. A confirmation \

@@ -1,3 +1,5 @@
+// Used geocode and a function to get the adresses from the houses and turn them into latitude and longitude
+// This way I can display the house adresses on a google maps card with a marker. 
 var encodedAddress = encodeURIComponent(address);
 var uri = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodedAddress}&key=AIzaSyC1_2LQmZ65yW8ttfBbHMgsJFqmc4UlCdY`;
 
