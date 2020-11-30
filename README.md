@@ -4,6 +4,33 @@ As a user you can look for houses and subscribe to the ones you're interested in
 As admin you can add houses, update house information or delete houses.<br>
 ## UX
 * User stories
+    * For a user
+        * As a user I want to be able to read some basic instructions on how the website works.
+        * As a user I want to be able to contact the owner of the website in case I have any questions.
+        * As a user I want to be able to navigatie easelly between the pages.
+        * As a user I want to be able to make my own account.
+        * As a user I want to be able to have a look at the houses that are available.
+        * As a user I want to be able to filter on houses with certain properties.
+        * As a user I want to be able to sort the houses on a certain propertie.
+        * As a user I want to be able to see more photos and details of a house I'm interested in.
+        * As a user I want to be able to see where a house is located.
+        * As a user I don't want to see any houses that are no longer available.
+        * As a user I want to be able to subscribe to a house.
+        * As a user I want to be able to unsubscribe to a house.
+        * As a user I want to be able to see for which houses I have a subscription.
+        * As a user I don't want to see subscriptions to houses that are no longer available.
+        * As a user I want to bee able to see my personal details.
+        * As a user I want to be able to change my personal details.
+        * As a user I want to be able to easelly make a payment.
+        * As a user I don't want to be able to accidentally make a dubble payment.
+    * For the admin
+        * As admin I want to be able to add avaialble houses.
+        * As admin I want to be able to edit available houses.
+        * As admin I want to be able to delete houses that are not available.
+        * As admin I want to get a warning before a house is really deleted.
+        * As admin I don't want the user to be able to subscribe more then once to a house.
+        * As admin I don't want the user to see houses that are not available, but I do want to keep them in the database.
+        * As admin I don't want other people to able to maken changes to houses or delete houses.
 * Design
     * Color Scheme
         * I've chosen for 2 popping colors that go well together to make the company stand out.
@@ -60,6 +87,12 @@ To make sure there where nog syntax errors, I've used the following validators o
 * [Python validator](https://extendsclass.com/python-tester.html)
 ### Testing User Stories from User Experience (UX) Section
 ### Further testing
+* I've tested this Website on Google Chrome, Microsoft Edge and Firefox browsers.
+* I've tested this Website on laptop and mobile.
+* I've tested different devices using "inspect" in chrome.
+* I've asked friends and family to look at the website and give feedback.
+* I've written as much automated tests as I could in the given time.
+* I've written automated tests for urls, views, models and forms.
 ### Known bugs
 ## Deployment
 This project was created using Github.<br>
@@ -79,6 +112,9 @@ For deployment on Heroku I've used the following steps:
 * In the heroku dashboard I've clicked "Deploy".
 * In the "Manual Deployment" section of this page I've made sure the master branch is selected and I've clicked "Deploy Branch".
 * The site was now successfully deployed.
+## Left to implement in the future
+* I've implemented a payment system for the user to make a payment for one year. With that I've made my buttons so a user cannot make a dubble payment and a user cannot subscribe to a house without making a payment. But what's left to implement is that the payment should get a date of experiment, one year after the payment.
+* I would like for the user to also be able to easelly see if they made a payment and what the date of experiment is.
 ## Credits
 ### Content
 * All the content for this website was writen by the devoloper herself.
