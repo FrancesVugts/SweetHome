@@ -86,6 +86,93 @@ To make sure there where nog syntax errors, I've used the following validators o
 * [CSS validator](https://jigsaw.w3.org/css-validator/)
 * [Python validator](https://extendsclass.com/python-tester.html)
 ### Testing User Stories from User Experience (UX) Section
+* User
+    * As a user I want to be able to read some basic instructions on how the website works.
+        * From the navigation menu the user can go to the "info" page.
+    * As a user I want to be able to contact the owner of the website in case I have any questions.
+        * From the navigation menu the user can go to the "contact" page.
+        * Here the user can fill in name, emailaddress and a message and send the question to the owner of the site.
+        * The user get's a pop up that tells the user that the message has been send. 
+    * As a user I want to be able to navigatie easelly between the pages.
+        * There is a Navigation menu on the top of the page with all the links displayed.
+        * On smaller screens there is a hamburger menu on the top of the page where the user can click on. This will result in a dropdown menu with all the links displayed.
+        * On certain actions the user gets linked to the most logical page. For instance, when subscribing to a house, the user gets linked to the profile page where it can see it's subscriptions.
+    * As a user I want to be able to make my own account.
+        * When navigating to the login page, there is a link that says "sign up".
+        * On the sign up page the user kan create an account.
+        * From there the user will be linked to the profile page.
+        * On the profile page the user can add personal information.
+    * As a user I want to be able to have a look at the houses that are available.
+        * From the navigation menu the user can go to the "houses" page.
+    * As a user I want to be able to filter on houses with certain properties.
+        * When on the houses page, there is a subheader with a link to "Set Filters" in the top left.
+        * When clicking on "Set filters", a modal pops up.
+        * On the modal the user can filter on city, price, type and minimum amount of bedrooms.
+        * When clicking "Save filters" the modal will close and the user can see the filterd list of houses.
+        * The user can also click on "Clear filters", to once again get all the results.
+    * As a user I want to be able to sort the houses on a certain propertie.
+        * When on the houses page, there is a subheader with a link to "Set Filters" in the top left.
+        * When clicking on "Set filters", a modal pops up.
+        * On the modal the user can sort by price or cityname in ascending or descending order.
+        * When clicking "Save filters" the modal will close and the user can see the sorted list of houses.
+        * The user can also click on "Clear filters", to once again get all the results from new to old.
+    * As a user I want to be able to see more photos and details of a house I'm interested in.
+        * When the user is on the houses page, it can click on a card.
+        * This will open up a new page with more photo's and details.
+    * As a user I want to be able to see where a house is located.
+        * When the user is on the houses page, it can click on a card.
+        * This will open up a new page where the user can also find a google maps map with a marker at the address from the house.
+    * As a user I don't want to see any houses that are no longer available.
+        * The houses page will only display cards for houses where the current date is betweend the starting and the ending date.
+    * As a user I want to be able to subscribe to a house.
+        * When the user is logged in, the user can fill out the personal details on the profile page.
+        * After that there will be a payment button available that the user can use to make a payment for one year.
+        * Then the user can go to the houses page and click on the house they want to subscribe to. 
+        * On the bottom of the page, there will be a subscribe button available. 
+    * As a user I want to be able to unsubscribe to a house.
+        * When a user is subscribed to a house, the user can unsubscribe with a button at the same place as the subscribe button.
+        * Also, on the profile page the user can see the subscriptions and use a unsubscribe button as well.
+    * As a user I want to be able to see for which houses I have a subscription.
+        * The user can go to the profile page via the menu.
+        * On the right side the user can see the subscriptions.
+        * When the user subscribes to a house, they will also automatically go to the profile page to be able to see the subscriptions.
+    * As a user I don't want to see subscriptions to houses that are no longer available.
+        * Just like the houses overview, only subscriptions will be viewed when the current date is betweend the start and enddate of the house.
+    * As a user I want to bee able to see my personal details.
+        * On the profile page the user can fill in the personal details.
+        * After the user has filled in the personal details, they will allways be viewed on the profile page.
+    * As a user I want to be able to change my personal details.
+        * On the profile page the user can fill in the personal details.
+        * After the user has filled in the personal details, they will allways be viewed on the profile page.
+        * When the user wants to change the personal details, the user can use the button on the bottom of the personal info.
+    * As a user I want to be able to easelly make a payment.
+        * When te user is logged in and the user has filled out the personal details, there will be a button for paymenty available at the bottom of the personal info.
+    * As a user I don't want to be able to accidentally make a dubble payment.
+        * When te user has made a payment, the payment button will nog longer be visible.
+* Admin
+    * As admin I want to be able to add avaialble houses.
+        * When logged in as super user the admin can go to the manage page via the menu.
+        * On this page the admin can fill out all the information and use the button to add the house.
+    * As admin I want to be able to edit available houses.
+        * When logged in the admin can go to the houses page and click on the house that needs to be adjusted.
+        * Under the house information the admin can click on "edit".
+        * Here the admin can change what needs to be changed and click on the button "Update house".
+    * As admin I want to be able to delete houses that are not available.
+        * When logged in the admin can go to the houses page and click on the house that needs to be adjusted.
+        * Under the house information the admin can click on "delete".
+        * A modal will pop up to ask the admin of the house really needs to be deleted as a safety check.
+        * Here the admin can change what needs to be changed and click on the button "Update house".
+    * As admin I want to get a warning before a house is really deleted.
+        * Under the house information the admin can click on "delete".
+        * A modal will pop up to ask the admin of the house really needs to be deleted as a safety check.
+    * As admin I don't want the user to be able to subscribe more then once to a house.
+        * When the user is subscribed to a house, the subscription button will no longer be visible.
+        * Also there will be a background check if the subscription allready exists. If so, there will not be another subscription added.
+    * As admin I don't want the user to see houses that are not available, but I do want to keep them in the database.
+        * The houses page will only display cards for houses where the current date is betweend the starting and the ending date.
+        * Alltough the houses will not be viewed, they are present in the database.
+    * As admin I don't want other people to able to maken changes to houses or delete houses.
+        * When someone is not logged in or the person is logged in but not as superuser, the links to update and delete houses are not visible.
 ### Further testing
 * I've tested this Website on Google Chrome, Microsoft Edge and Firefox browsers.
 * I've tested this Website on laptop and mobile.
@@ -94,6 +181,8 @@ To make sure there where nog syntax errors, I've used the following validators o
 * I've written as much automated tests as I could in the given time.
 * I've written automated tests for urls, views, models and forms.
 ### Known bugs
+* There is one bug on the page where you can edit a house. When you hover over the "Select image" button, the mouse should turn in to a hand. It does do that, but not for the whole button as it should be.
+* The same goes for the page where you can add a house.
 ## Deployment
 This project was created using Github.<br>
 From there I used Gitpod.io to write my code.<br>
@@ -115,6 +204,7 @@ For deployment on Heroku I've used the following steps:
 ## Left to implement in the future
 * I've implemented a payment system for the user to make a payment for one year. With that I've made my buttons so a user cannot make a dubble payment and a user cannot subscribe to a house without making a payment. But what's left to implement is that the payment should get a date of experiment, one year after the payment.
 * I would like for the user to also be able to easelly see if they made a payment and what the date of experiment is.
+* If there would have been more time, I would have liked to write more automated tests.
 ## Credits
 ### Content
 * All the content for this website was writen by the devoloper herself.
